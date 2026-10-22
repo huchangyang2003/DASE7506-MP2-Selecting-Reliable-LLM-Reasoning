@@ -1,0 +1,254 @@
+{
+  "initial_parameter_sha256": "7557c774416127cf1f9070ddc608c4132773c0b38561dd29c89dfa3552f76784",
+  "question_shuffle_sha256": "183def0bc7a1328bd785c737e341353dbccb59fed70d512aa31d2a0b5c078a0f",
+  "epochs": 60,
+  "question_batch_size": 128,
+  "candidates_per_full_batch": 512,
+  "hidden": 32,
+  "learning_rate": 0.001,
+  "weight_l2": 0.0001,
+  "optimizer": "Adam beta1=0.9 beta2=0.999 epsilon=1e-8",
+  "updates": 1800,
+  "trace": [
+    {
+      "epoch": 1,
+      "online_mean_question_data_loss": 0.4915983426520752
+    },
+    {
+      "epoch": 2,
+      "online_mean_question_data_loss": 0.31826965634629806
+    },
+    {
+      "epoch": 3,
+      "online_mean_question_data_loss": 0.257039998780415
+    },
+    {
+      "epoch": 4,
+      "online_mean_question_data_loss": 0.22304886717400216
+    },
+    {
+      "epoch": 5,
+      "online_mean_question_data_loss": 0.19991369310425658
+    },
+    {
+      "epoch": 6,
+      "online_mean_question_data_loss": 0.184856896035052
+    },
+    {
+      "epoch": 7,
+      "online_mean_question_data_loss": 0.1729800982242127
+    },
+    {
+      "epoch": 8,
+      "online_mean_question_data_loss": 0.16331144532758732
+    },
+    {
+      "epoch": 9,
+      "online_mean_question_data_loss": 0.1546965017366359
+    },
+    {
+      "epoch": 10,
+      "online_mean_question_data_loss": 0.14722580834048027
+    },
+    {
+      "epoch": 11,
+      "online_mean_question_data_loss": 0.14069347898353413
+    },
+    {
+      "epoch": 12,
+      "online_mean_question_data_loss": 0.13431630933071662
+    },
+    {
+      "epoch": 13,
+      "online_mean_question_data_loss": 0.1287277561037573
+    },
+    {
+      "epoch": 14,
+      "online_mean_question_data_loss": 0.12288401470951478
+    },
+    {
+      "epoch": 15,
+      "online_mean_question_data_loss": 0.11856930066765796
+    },
+    {
+      "epoch": 16,
+      "online_mean_question_data_loss": 0.11321273382623866
+    },
+    {
+      "epoch": 17,
+      "online_mean_question_data_loss": 0.10727636218384362
+    },
+    {
+      "epoch": 18,
+      "online_mean_question_data_loss": 0.10231976635699268
+    },
+    {
+      "epoch": 19,
+      "online_mean_question_data_loss": 0.09819622988079123
+    },
+    {
+      "epoch": 20,
+      "online_mean_question_data_loss": 0.09393947159814658
+    },
+    {
+      "epoch": 21,
+      "online_mean_question_data_loss": 0.09139544560674864
+    },
+    {
+      "epoch": 22,
+      "online_mean_question_data_loss": 0.08643860723647033
+    },
+    {
+      "epoch": 23,
+      "online_mean_question_data_loss": 0.08255324609867531
+    },
+    {
+      "epoch": 24,
+      "online_mean_question_data_loss": 0.07797739035856335
+    },
+    {
+      "epoch": 25,
+      "online_mean_question_data_loss": 0.07590384938050018
+    },
+    {
+      "epoch": 26,
+      "online_mean_question_data_loss": 0.07239620625722044
+    },
+    {
+      "epoch": 27,
+      "online_mean_question_data_loss": 0.06944103468088071
+    },
+    {
+      "epoch": 28,
+      "online_mean_question_data_loss": 0.06633448961154645
+    },
+    {
+      "epoch": 29,
+      "online_mean_question_data_loss": 0.06379560807369235
+    },
+    {
+      "epoch": 30,
+      "online_mean_question_data_loss": 0.06051586443787493
+    },
+    {
+      "epoch": 31,
+      "online_mean_question_data_loss": 0.05809336707983107
+    },
+    {
+      "epoch": 32,
+      "online_mean_question_data_loss": 0.056464743076752165
+    },
+    {
+      "epoch": 33,
+      "online_mean_question_data_loss": 0.05643528904746258
+    },
+    {
+      "epoch": 34,
+      "online_mean_question_data_loss": 0.05284788902186946
+    },
+    {
+      "epoch": 35,
+      "online_mean_question_data_loss": 0.05027398286087656
+    },
+    {
+      "epoch": 36,
+      "online_mean_question_data_loss": 0.04829885603000188
+    },
+    {
+      "epoch": 37,
+      "online_mean_question_data_loss": 0.04579020196378043
+    },
+    {
+      "epoch": 38,
+      "online_mean_question_data_loss": 0.044110523205795
+    },
+    {
+      "epoch": 39,
+      "online_mean_question_data_loss": 0.040408502331886885
+    },
+    {
+      "epoch": 40,
+      "online_mean_question_data_loss": 0.03958448855408108
+    },
+    {
+      "epoch": 41,
+      "online_mean_question_data_loss": 0.03873452888929004
+    },
+    {
+      "epoch": 42,
+      "online_mean_question_data_loss": 0.036734414985158594
+    },
+    {
+      "epoch": 43,
+      "online_mean_question_data_loss": 0.03403104039067726
+    },
+    {
+      "epoch": 44,
+      "online_mean_question_data_loss": 0.03335190663500038
+    },
+    {
+      "epoch": 45,
+      "online_mean_question_data_loss": 0.033389374468824215
+    },
+    {
+      "epoch": 46,
+      "online_mean_question_data_loss": 0.030890594382469713
+    },
+    {
+      "epoch": 47,
+      "online_mean_question_data_loss": 0.03204736416742253
+    },
+    {
+      "epoch": 48,
+      "online_mean_question_data_loss": 0.031138679122338787
+    },
+    {
+      "epoch": 49,
+      "online_mean_question_data_loss": 0.03172418494345512
+    },
+    {
+      "epoch": 50,
+      "online_mean_question_data_loss": 0.03080845561728555
+    },
+    {
+      "epoch": 51,
+      "online_mean_question_data_loss": 0.030487730300012825
+    },
+    {
+      "epoch": 52,
+      "online_mean_question_data_loss": 0.027018684846839693
+    },
+    {
+      "epoch": 53,
+      "online_mean_question_data_loss": 0.02668829696873824
+    },
+    {
+      "epoch": 54,
+      "online_mean_question_data_loss": 0.025869991702784624
+    },
+    {
+      "epoch": 55,
+      "online_mean_question_data_loss": 0.025758502017765392
+    },
+    {
+      "epoch": 56,
+      "online_mean_question_data_loss": 0.027354746097238532
+    },
+    {
+      "epoch": 57,
+      "online_mean_question_data_loss": 0.027395332909799276
+    },
+    {
+      "epoch": 58,
+      "online_mean_question_data_loss": 0.027652124755797453
+    },
+    {
+      "epoch": 59,
+      "online_mean_question_data_loss": 0.02428000481440818
+    },
+    {
+      "epoch": 60,
+      "online_mean_question_data_loss": 0.02262999444071803
+    }
+  ]
+}

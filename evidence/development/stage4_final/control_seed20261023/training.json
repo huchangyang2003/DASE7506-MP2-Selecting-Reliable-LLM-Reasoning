@@ -1,0 +1,160 @@
+{
+  "mode": "control",
+  "seed": 20261023,
+  "seconds": 0.07558620000054361,
+  "features": [
+    "mlp_centered_logit",
+    "embedding_centered_logit",
+    "support_centered",
+    "same_answer_mean_mlp_centered",
+    "same_answer_mean_embedding_centered",
+    "mlp_times_support",
+    "embedding_times_support",
+    "valid_centered"
+  ],
+  "optimization": {
+    "converged": true,
+    "stop_reason": "gradient_tolerance",
+    "iterations": 24,
+    "final_loss": 0.37126963653424344,
+    "gradient_inf": 9.654271183683602e-07,
+    "trace": [
+      {
+        "iteration": 0,
+        "loss": 0.557194864405228,
+        "gradient_inf": 0.23168040670763446
+      },
+      {
+        "iteration": 1,
+        "loss": 0.41544531822686404,
+        "gradient_inf": 0.06716935249325456
+      },
+      {
+        "iteration": 2,
+        "loss": 0.40059184383076857,
+        "gradient_inf": 0.042187174187427665
+      },
+      {
+        "iteration": 3,
+        "loss": 0.3830808797667616,
+        "gradient_inf": 0.020006143445403902
+      },
+      {
+        "iteration": 4,
+        "loss": 0.3760065104617851,
+        "gradient_inf": 0.007749680700199459
+      },
+      {
+        "iteration": 5,
+        "loss": 0.3737863991463566,
+        "gradient_inf": 0.004846832174666929
+      },
+      {
+        "iteration": 6,
+        "loss": 0.37301435948534795,
+        "gradient_inf": 0.00676156640010848
+      },
+      {
+        "iteration": 7,
+        "loss": 0.3724069089071004,
+        "gradient_inf": 0.004688865043956943
+      },
+      {
+        "iteration": 8,
+        "loss": 0.3719092940844866,
+        "gradient_inf": 0.004718318944405339
+      },
+      {
+        "iteration": 9,
+        "loss": 0.37159891535091544,
+        "gradient_inf": 0.0019318710198250376
+      },
+      {
+        "iteration": 10,
+        "loss": 0.3715077732184205,
+        "gradient_inf": 0.0011027062309585246
+      },
+      {
+        "iteration": 11,
+        "loss": 0.3713791219124448,
+        "gradient_inf": 0.00126805032025117
+      },
+      {
+        "iteration": 12,
+        "loss": 0.37129801008476165,
+        "gradient_inf": 0.0011254375004734476
+      },
+      {
+        "iteration": 13,
+        "loss": 0.3712782381650361,
+        "gradient_inf": 0.0005172857258111094
+      },
+      {
+        "iteration": 14,
+        "loss": 0.3712704899208586,
+        "gradient_inf": 0.00016688997644331093
+      },
+      {
+        "iteration": 15,
+        "loss": 0.3712698984775902,
+        "gradient_inf": 3.025303430771793e-05
+      },
+      {
+        "iteration": 16,
+        "loss": 0.3712698585752776,
+        "gradient_inf": 2.448187692831715e-05
+      },
+      {
+        "iteration": 17,
+        "loss": 0.3712698248502219,
+        "gradient_inf": 2.1081566170988842e-05
+      },
+      {
+        "iteration": 18,
+        "loss": 0.3712697587443635,
+        "gradient_inf": 3.330870894226732e-05
+      },
+      {
+        "iteration": 19,
+        "loss": 0.3712696923215938,
+        "gradient_inf": 4.599730700764694e-05
+      },
+      {
+        "iteration": 20,
+        "loss": 0.3712696750055155,
+        "gradient_inf": 6.653667521295143e-05
+      },
+      {
+        "iteration": 21,
+        "loss": 0.37126963879937663,
+        "gradient_inf": 9.325938109379752e-06
+      },
+      {
+        "iteration": 22,
+        "loss": 0.3712696367725325,
+        "gradient_inf": 2.735242704370673e-06
+      },
+      {
+        "iteration": 23,
+        "loss": 0.37126963654897127,
+        "gradient_inf": 1.0049446926001671e-06
+      },
+      {
+        "iteration": 24,
+        "loss": 0.37126963653424344,
+        "gradient_inf": 9.654271183683602e-07
+      }
+    ]
+  },
+  "weights_on_standardized_features": [
+    0.10347759109456131,
+    -0.5274357913299106,
+    0.1648884137105474,
+    1.21385865184348,
+    1.055304905813087,
+    0.04240667004588185,
+    0.32887974915535784,
+    0.2768947954022162
+  ],
+  "control_parameters_exactly_match_stage3": true
+}

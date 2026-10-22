@@ -1,0 +1,15 @@
+{
+  "checkpoint": "hard_x2_seed20261022",
+  "reason": "Strongest nonuniform mode by three-seed mean; diagnostic only, not promoted",
+  "reload_matches_official_validation_predictions": true,
+  "new_question_ids": true,
+  "variable_bank_size_17": true,
+  "reordering_changed_indices": 0,
+  "reordering_changed_numeric_answers": 0,
+  "only_checkpoint_files_opened_during_predict": true,
+  "opened_during_predict": [
+    "runs\\stage2\\hard_x2_seed20261022\\checkpoint\\config.json",
+    "runs\\stage2\\hard_x2_seed20261022\\checkpoint\\model.npz"
+  ],
+  "test_evaluated": false
+}

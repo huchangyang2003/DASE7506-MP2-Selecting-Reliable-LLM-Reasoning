@@ -1,0 +1,26 @@
+[
+  {
+    "mode": "control",
+    "seeds": 3,
+    "accuracy_mean": 92.56474519632415,
+    "accuracy_sample_std": 0.40282584632384805,
+    "disagreement_mean": 83.28638497652582,
+    "disagreement_sample_std": 0.9055071137082632
+  },
+  {
+    "mode": "coverage",
+    "seeds": 3,
+    "accuracy_mean": 92.64828738512949,
+    "accuracy_sample_std": 0.38283840392279367,
+    "disagreement_mean": 83.47417840375586,
+    "disagreement_sample_std": 0.8605775952968695
+  },
+  {
+    "mode": "arithmetic",
+    "seeds": 3,
+    "accuracy_mean": 93.1077694235589,
+    "accuracy_sample_std": 0.6630955666828467,
+    "disagreement_mean": 84.50704225352112,
+    "disagreement_sample_std": 1.490564118909628
+  }
+]

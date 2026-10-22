@@ -1,0 +1,19 @@
+{
+  "pre_validation_revisions": [
+    "Initial numeric-fragment review; preserve stage4_parser",
+    "Prefix guard placement bug: 7 unit-test errors, fixed before training; failure log preserved",
+    "First frozen audit plus 9 fits in stage4, never validated",
+    "Train-input review found percent-answer unit ambiguity; final parser skips such RHS",
+    "Final parser_v2 audit plus 9 final fits before any stage4 validation"
+  ],
+  "total_fusion_fits": 18,
+  "final_fusion_fits": 9,
+  "official_validation_runs": 9,
+  "measured_training_entry_seconds": 1.9771529999998165,
+  "measured_complete_parser_audit_seconds": 9.020418600000994,
+  "unmeasured_failed_parser_audits": 1,
+  "new_base_fits": 0,
+  "final_parser_sha256": "c8feff01581ba500caddc5baef6f0b0c9569f8d11b463d8d07a77fe24c81d26a",
+  "unit_tests_passed": 27,
+  "source": "Recorded tool output and saved training/audit JSON; no inference weights changed after validation."
+}

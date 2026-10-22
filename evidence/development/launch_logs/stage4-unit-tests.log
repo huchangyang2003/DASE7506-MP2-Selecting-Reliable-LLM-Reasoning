@@ -1,0 +1,31 @@
+test_exact_decimal_fraction_and_precedence (test_arithmetic.ArithmeticTests.test_exact_decimal_fraction_and_precedence) ... ok
+test_latex_chain_boxed_thousands_and_units (test_arithmetic.ArithmeticTests.test_latex_chain_boxed_thousands_and_units) ... ok
+test_markdown_and_wrong_equation_soft_evidence (test_arithmetic.ArithmeticTests.test_markdown_and_wrong_equation_soft_evidence) ... ok
+test_percent_of_and_word_arithmetic_boundaries (test_arithmetic.ArithmeticTests.test_percent_of_and_word_arithmetic_boundaries) ... ok
+test_permutation_and_finite_features (test_arithmetic.ArithmeticTests.test_permutation_and_finite_features) ... ok
+test_rounding_not_conflated_with_exact (test_arithmetic.ArithmeticTests.test_rounding_not_conflated_with_exact) ... ok
+test_safe_rejection_and_bounds (test_arithmetic.ArithmeticTests.test_safe_rejection_and_bounds) ... ok
+test_variables_implicit_multiplication_not_numeric_fragments (test_arithmetic.ArithmeticTests.test_variables_implicit_multiplication_not_numeric_fragments) ... ok
+test_zero_coverage_and_final_answer_is_not_a_gold_label (test_arithmetic.ArithmeticTests.test_zero_coverage_and_final_answer_is_not_a_gold_label) ... ok
+test_equivalent_valid_answers_and_invalids (test_fusion.FusionTests.test_equivalent_valid_answers_and_invalids) ... ok
+test_fusion_features_permute_and_do_not_depend_on_id (test_fusion.FusionTests.test_fusion_features_permute_and_do_not_depend_on_id) ... ok
+test_grouped_oof_no_question_overlap (test_fusion.FusionTests.test_grouped_oof_no_question_overlap) ... ok
+test_logistic_gradient_and_convergence (test_fusion.FusionTests.test_logistic_gradient_and_convergence) ... ok
+test_preprocessing_ignores_heldout_rows (test_fusion.FusionTests.test_preprocessing_ignores_heldout_rows) ... ok
+test_all_correct_questions_have_zero_ranking_loss_and_gradient (test_objectives.ObjectiveTests.test_all_correct_questions_have_zero_ranking_loss_and_gradient) ... ok
+test_all_objective_gradients_by_finite_difference (test_objectives.ObjectiveTests.test_all_objective_gradients_by_finite_difference) ... ok
+test_candidate_permutation_follows_labels_and_gradient (test_objectives.ObjectiveTests.test_candidate_permutation_follows_labels_and_gradient) ... ok
+test_extreme_logits_are_numerically_stable (test_objectives.ObjectiveTests.test_extreme_logits_are_numerically_stable) ... ok
+test_full_network_gradients_by_finite_difference (test_objectives.ObjectiveTests.test_full_network_gradients_by_finite_difference) ... ok
+test_multi_positive_listwise_known_values (test_objectives.ObjectiveTests.test_multi_positive_listwise_known_values) ... ok
+test_ranking_is_invariant_to_per_question_score_shift (test_objectives.ObjectiveTests.test_ranking_is_invariant_to_per_question_score_shift) ... ok
+test_equivalent_answers_and_invalids_do_not_inflate_difficulty (test_weighted_bce.WeightedBCETests.test_equivalent_answers_and_invalids_do_not_inflate_difficulty) ... ok
+test_uniform_is_exact_original_bce (test_weighted_bce.WeightedBCETests.test_uniform_is_exact_original_bce) ... ok
+test_weight_normalization_preserves_relative_ratios (test_weighted_bce.WeightedBCETests.test_weight_normalization_preserves_relative_ratios) ... ok
+test_weighted_network_gradient_by_finite_difference (test_weighted_bce.WeightedBCETests.test_weighted_network_gradient_by_finite_difference) ... ok
+test_zero_weights_remove_only_data_loss (test_weighted_bce.WeightedBCETests.test_zero_weights_remove_only_data_loss) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.082s
+
+OK

@@ -1,0 +1,10 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "2.5.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cpu": "Intel Core i7-14700K",
+  "thread_limits": 4,
+  "parallel_training_workers": 1,
+  "no_new_packages": true,
+  "official_scorer_unchanged": true
+}

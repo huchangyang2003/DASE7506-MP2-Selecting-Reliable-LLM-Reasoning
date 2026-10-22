@@ -1,0 +1,12 @@
+{
+  "original_evaluator_sha256": "7519a6283090e914786687b0da623f0e137dec967beb3cc0b6fbd203726bac98",
+  "repaired_evaluator_sha256": "9b6327d1c48ff613f4ec25df3110a9a18dfd3b33c0cd360067556a46411b77dc",
+  "failure_log": "evaluation-launch.log",
+  "retry_log": "verification-retry.log",
+  "reason": "Lazy import of NumPy testing helper occurred inside strict inference read guard",
+  "repair": "Preload assertion helper; add verify-only entry point",
+  "refitted_models": 0,
+  "rescored_models": 0,
+  "predictions_changed": false,
+  "verification_passed": true
+}

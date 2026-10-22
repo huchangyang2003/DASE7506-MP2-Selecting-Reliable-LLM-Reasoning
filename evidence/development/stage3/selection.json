@@ -1,0 +1,9 @@
+{
+  "best_average_mode": "stacking_0.001",
+  "passes_minimum_practical_candidate_rule": true,
+  "primary_seed": 20261022,
+  "development_checkpoint": "runs/stage3/stacking_0.001_seed20261022/checkpoint",
+  "test_evaluated": false,
+  "v1_replaced": false,
+  "note": "Repeated validation development; bootstrap intervals descriptive, no selection correction. Mean across seeds is not an inference ensemble; never select best seed."
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "subset": "all_four_covered",
+    "n": 551,
+    "control": 92.37749546279491,
+    "coverage": 92.37749546279491,
+    "arithmetic": 93.10344827586206
+  },
+  {
+    "subset": "some_covered",
+    "n": 218,
+    "control": 94.18960244648318,
+    "coverage": 94.49541284403668,
+    "arithmetic": 94.34250764525994
+  },
+  {
+    "subset": "none_covered",
+    "n": 29,
+    "control": 83.9080459770115,
+    "coverage": 83.9080459770115,
+    "arithmetic": 83.9080459770115
+  },
+  {
+    "subset": "some_candidate_has_bad",
+    "n": 68,
+    "control": 81.37254901960786,
+    "coverage": 81.37254901960786,
+    "arithmetic": 85.7843137254902
+  }
+]

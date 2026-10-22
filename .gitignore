@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+data/
+output/
+runs/
+evaluation/repeated-*
+evaluation/reproduction_repeat*/
+evaluation/training_rebuild*/

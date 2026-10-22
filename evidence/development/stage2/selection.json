@@ -1,0 +1,8 @@
+{
+  "best_average_weight_mode": "uniform",
+  "passes_minimum_practical_candidate_rule": false,
+  "primary_seed": 20261022,
+  "development_checkpoint": "runs/stage2/uniform_seed20261022/checkpoint",
+  "test_evaluated": false,
+  "not_a_final_submission_or_independent_test": true
+}

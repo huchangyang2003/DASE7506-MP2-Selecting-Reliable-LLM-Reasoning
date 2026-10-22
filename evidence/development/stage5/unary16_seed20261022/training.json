@@ -1,0 +1,256 @@
+{
+  "mode": "unary16",
+  "seed": 20261022,
+  "epochs": 60,
+  "updates": 2280,
+  "question_batch_size": 128,
+  "learning_rate": 0.001,
+  "weight_l2": 0.001,
+  "trainable_parameters": 705,
+  "initial_output_exactly_frozen_offset": true,
+  "common_initial_sha256": "f320a5bebbb24d1e8c441d3d81fd9b719563d282a62af0a75137eede63d8f96d",
+  "question_shuffle_sha256": "62faea452cd350ecc91e11866d0b795dc61113bfa2443fe20b9b82538a21eabc",
+  "trace": [
+    {
+      "epoch": 1,
+      "online_mean_candidate_bce": 0.36141653968747595
+    },
+    {
+      "epoch": 2,
+      "online_mean_candidate_bce": 0.3575841923235068
+    },
+    {
+      "epoch": 3,
+      "online_mean_candidate_bce": 0.3485648929681055
+    },
+    {
+      "epoch": 4,
+      "online_mean_candidate_bce": 0.33192455763178397
+    },
+    {
+      "epoch": 5,
+      "online_mean_candidate_bce": 0.31002710340655104
+    },
+    {
+      "epoch": 6,
+      "online_mean_candidate_bce": 0.28734209467365446
+    },
+    {
+      "epoch": 7,
+      "online_mean_candidate_bce": 0.2680904679890111
+    },
+    {
+      "epoch": 8,
+      "online_mean_candidate_bce": 0.25451218456938407
+    },
+    {
+      "epoch": 9,
+      "online_mean_candidate_bce": 0.2452901644385107
+    },
+    {
+      "epoch": 10,
+      "online_mean_candidate_bce": 0.23844733238722454
+    },
+    {
+      "epoch": 11,
+      "online_mean_candidate_bce": 0.23319798223092728
+    },
+    {
+      "epoch": 12,
+      "online_mean_candidate_bce": 0.22868245670498746
+    },
+    {
+      "epoch": 13,
+      "online_mean_candidate_bce": 0.2252346363379228
+    },
+    {
+      "epoch": 14,
+      "online_mean_candidate_bce": 0.22214318594151328
+    },
+    {
+      "epoch": 15,
+      "online_mean_candidate_bce": 0.21933846575369464
+    },
+    {
+      "epoch": 16,
+      "online_mean_candidate_bce": 0.21708875758275387
+    },
+    {
+      "epoch": 17,
+      "online_mean_candidate_bce": 0.21471583786734025
+    },
+    {
+      "epoch": 18,
+      "online_mean_candidate_bce": 0.2130806045136326
+    },
+    {
+      "epoch": 19,
+      "online_mean_candidate_bce": 0.2113752288773649
+    },
+    {
+      "epoch": 20,
+      "online_mean_candidate_bce": 0.209539385672845
+    },
+    {
+      "epoch": 21,
+      "online_mean_candidate_bce": 0.20770772438539026
+    },
+    {
+      "epoch": 22,
+      "online_mean_candidate_bce": 0.2063237266846022
+    },
+    {
+      "epoch": 23,
+      "online_mean_candidate_bce": 0.20473540629709253
+    },
+    {
+      "epoch": 24,
+      "online_mean_candidate_bce": 0.2032310147293281
+    },
+    {
+      "epoch": 25,
+      "online_mean_candidate_bce": 0.2019476867494919
+    },
+    {
+      "epoch": 26,
+      "online_mean_candidate_bce": 0.20079518355814793
+    },
+    {
+      "epoch": 27,
+      "online_mean_candidate_bce": 0.19970180957620698
+    },
+    {
+      "epoch": 28,
+      "online_mean_candidate_bce": 0.19825033134688785
+    },
+    {
+      "epoch": 29,
+      "online_mean_candidate_bce": 0.1973982260150338
+    },
+    {
+      "epoch": 30,
+      "online_mean_candidate_bce": 0.19656035076696335
+    },
+    {
+      "epoch": 31,
+      "online_mean_candidate_bce": 0.19549727728614805
+    },
+    {
+      "epoch": 32,
+      "online_mean_candidate_bce": 0.19421204804182363
+    },
+    {
+      "epoch": 33,
+      "online_mean_candidate_bce": 0.1935008273599871
+    },
+    {
+      "epoch": 34,
+      "online_mean_candidate_bce": 0.19239200401153378
+    },
+    {
+      "epoch": 35,
+      "online_mean_candidate_bce": 0.1918166503707772
+    },
+    {
+      "epoch": 36,
+      "online_mean_candidate_bce": 0.1911707762034836
+    },
+    {
+      "epoch": 37,
+      "online_mean_candidate_bce": 0.18996251933263394
+    },
+    {
+      "epoch": 38,
+      "online_mean_candidate_bce": 0.1889237409585649
+    },
+    {
+      "epoch": 39,
+      "online_mean_candidate_bce": 0.1880125439288279
+    },
+    {
+      "epoch": 40,
+      "online_mean_candidate_bce": 0.18744142454335663
+    },
+    {
+      "epoch": 41,
+      "online_mean_candidate_bce": 0.18664767598452361
+    },
+    {
+      "epoch": 42,
+      "online_mean_candidate_bce": 0.18627497019491007
+    },
+    {
+      "epoch": 43,
+      "online_mean_candidate_bce": 0.1853127866121786
+    },
+    {
+      "epoch": 44,
+      "online_mean_candidate_bce": 0.18498148085839564
+    },
+    {
+      "epoch": 45,
+      "online_mean_candidate_bce": 0.18374684334929578
+    },
+    {
+      "epoch": 46,
+      "online_mean_candidate_bce": 0.18321779916539804
+    },
+    {
+      "epoch": 47,
+      "online_mean_candidate_bce": 0.1825025775535534
+    },
+    {
+      "epoch": 48,
+      "online_mean_candidate_bce": 0.18198526127511588
+    },
+    {
+      "epoch": 49,
+      "online_mean_candidate_bce": 0.18114105537092137
+    },
+    {
+      "epoch": 50,
+      "online_mean_candidate_bce": 0.1808451282113367
+    },
+    {
+      "epoch": 51,
+      "online_mean_candidate_bce": 0.1803593874699448
+    },
+    {
+      "epoch": 52,
+      "online_mean_candidate_bce": 0.17977165749689952
+    },
+    {
+      "epoch": 53,
+      "online_mean_candidate_bce": 0.17944427329114065
+    },
+    {
+      "epoch": 54,
+      "online_mean_candidate_bce": 0.1798461835514834
+    },
+    {
+      "epoch": 55,
+      "online_mean_candidate_bce": 0.17812348947902149
+    },
+    {
+      "epoch": 56,
+      "online_mean_candidate_bce": 0.17753608521534142
+    },
+    {
+      "epoch": 57,
+      "online_mean_candidate_bce": 0.17682197070030337
+    },
+    {
+      "epoch": 58,
+      "online_mean_candidate_bce": 0.17638565559185895
+    },
+    {
+      "epoch": 59,
+      "online_mean_candidate_bce": 0.1760645646213482
+    },
+    {
+      "epoch": 60,
+      "online_mean_candidate_bce": 0.17546720074424071
+    }
+  ],
+  "training_seconds": 0.6974860000009357
+}

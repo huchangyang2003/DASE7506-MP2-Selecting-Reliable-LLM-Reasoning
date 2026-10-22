@@ -1,0 +1,9 @@
+{
+  "best_average_mode": "set16",
+  "passes_minimum_practical_candidate_rule": false,
+  "primary_seed": 20261022,
+  "development_checkpoint": "runs/stage5/set16_seed20261022/checkpoint",
+  "test_evaluated": false,
+  "v1_or_stage4_replaced": false,
+  "note": "Repeated validation development, not independent test. Neural seeds use corresponding historical base seed. Means across seeds are not inference ensembles."
+}

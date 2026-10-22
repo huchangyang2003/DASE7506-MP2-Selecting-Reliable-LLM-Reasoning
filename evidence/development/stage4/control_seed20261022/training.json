@@ -1,0 +1,160 @@
+{
+  "mode": "control",
+  "seed": 20261022,
+  "seconds": 0.07589670000015758,
+  "features": [
+    "mlp_centered_logit",
+    "embedding_centered_logit",
+    "support_centered",
+    "same_answer_mean_mlp_centered",
+    "same_answer_mean_embedding_centered",
+    "mlp_times_support",
+    "embedding_times_support",
+    "valid_centered"
+  ],
+  "optimization": {
+    "converged": true,
+    "stop_reason": "gradient_tolerance",
+    "iterations": 24,
+    "final_loss": 0.369354577972144,
+    "gradient_inf": 5.830644698709067e-07,
+    "trace": [
+      {
+        "iteration": 0,
+        "loss": 0.557194864405228,
+        "gradient_inf": 0.23237552709987203
+      },
+      {
+        "iteration": 1,
+        "loss": 0.4150723206400593,
+        "gradient_inf": 0.06867945740441081
+      },
+      {
+        "iteration": 2,
+        "loss": 0.3997610483022334,
+        "gradient_inf": 0.04337987051784126
+      },
+      {
+        "iteration": 3,
+        "loss": 0.3817503006983847,
+        "gradient_inf": 0.019779275127506542
+      },
+      {
+        "iteration": 4,
+        "loss": 0.374506338056442,
+        "gradient_inf": 0.008069406098925697
+      },
+      {
+        "iteration": 5,
+        "loss": 0.3721066113249632,
+        "gradient_inf": 0.004712617736684834
+      },
+      {
+        "iteration": 6,
+        "loss": 0.3711524780718192,
+        "gradient_inf": 0.006702837582491402
+      },
+      {
+        "iteration": 7,
+        "loss": 0.3704256066781069,
+        "gradient_inf": 0.003458826557123191
+      },
+      {
+        "iteration": 8,
+        "loss": 0.37000497759097484,
+        "gradient_inf": 0.0042802726047767485
+      },
+      {
+        "iteration": 9,
+        "loss": 0.3697133851605156,
+        "gradient_inf": 0.0012775826135796914
+      },
+      {
+        "iteration": 10,
+        "loss": 0.3696283768667713,
+        "gradient_inf": 0.001307779542433724
+      },
+      {
+        "iteration": 11,
+        "loss": 0.369439974822287,
+        "gradient_inf": 0.0014424612175332205
+      },
+      {
+        "iteration": 12,
+        "loss": 0.3694309477254169,
+        "gradient_inf": 0.0026848687332339427
+      },
+      {
+        "iteration": 13,
+        "loss": 0.369360406355442,
+        "gradient_inf": 0.0002443763273158482
+      },
+      {
+        "iteration": 14,
+        "loss": 0.3693580046325197,
+        "gradient_inf": 0.00014103345667399098
+      },
+      {
+        "iteration": 15,
+        "loss": 0.3693572218543822,
+        "gradient_inf": 0.00012125017293883741
+      },
+      {
+        "iteration": 16,
+        "loss": 0.36935695351676595,
+        "gradient_inf": 6.594102794480692e-05
+      },
+      {
+        "iteration": 17,
+        "loss": 0.36935609802190544,
+        "gradient_inf": 8.213785851376955e-05
+      },
+      {
+        "iteration": 18,
+        "loss": 0.3693552422410553,
+        "gradient_inf": 0.00013678897268227868
+      },
+      {
+        "iteration": 19,
+        "loss": 0.36935504580430784,
+        "gradient_inf": 0.00017512660748584646
+      },
+      {
+        "iteration": 20,
+        "loss": 0.3693546006005001,
+        "gradient_inf": 3.458858121780228e-05
+      },
+      {
+        "iteration": 21,
+        "loss": 0.3693545791782217,
+        "gradient_inf": 7.150759235674477e-06
+      },
+      {
+        "iteration": 22,
+        "loss": 0.3693545780179676,
+        "gradient_inf": 1.7262584714818988e-06
+      },
+      {
+        "iteration": 23,
+        "loss": 0.36935457799907945,
+        "gradient_inf": 1.6995146677088827e-06
+      },
+      {
+        "iteration": 24,
+        "loss": 0.369354577972144,
+        "gradient_inf": 5.830644698709067e-07
+      }
+    ]
+  },
+  "weights_on_standardized_features": [
+    0.20286942065382577,
+    -0.5657757739328807,
+    0.11495224977805345,
+    1.2668028056536287,
+    1.0510003551532592,
+    -0.004769658072005978,
+    0.3557486404221184,
+    0.26423199338505593
+  ],
+  "control_parameters_exactly_match_stage3": true
+}

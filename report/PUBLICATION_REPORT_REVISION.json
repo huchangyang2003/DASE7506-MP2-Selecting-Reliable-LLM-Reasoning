@@ -1,0 +1,11 @@
+{
+  "scope": "Publication report reorganization and restrained academic formatting",
+  "pages": 10,
+  "style_reference": "https://github.com/Dylan0528/DASE7506-Project2/blob/b19e272c687d16f2703ebfe191d6a6f82614adca/REPORT.md",
+  "reference_read_after_experiments_completed": true,
+  "new_training_or_method_selection": false,
+  "author_ai_paragraph_preserved": true,
+  "model_and_scores_unchanged": true,
+  "backup": "../Submission_Preparation/Publication_Report_20261022/before",
+  "pdf_sha256": "08dd0c9350249e53d3682f98f3ed40f004619a363cc4fdabc925836c64632c17"
+}

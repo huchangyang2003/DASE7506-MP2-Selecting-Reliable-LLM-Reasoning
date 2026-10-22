@@ -1,0 +1,58 @@
+{
+  "pairwise": {
+    "all": {
+      "mean_gain_percentage_points": -0.2506265664160401,
+      "gain_by_seed_percentage_points": [
+        -0.12531328320802004,
+        0.2506265664160401,
+        -0.8771929824561403
+      ],
+      "wins_across_three_seeds": 1,
+      "question_bootstrap_95_interval": [
+        -1.1278195488721803,
+        0.6265664160401002
+      ]
+    },
+    "disagreement": {
+      "mean_gain_percentage_points": -0.563380281690141,
+      "gain_by_seed_percentage_points": [
+        -0.28169014084507044,
+        0.5633802816901409,
+        -1.971830985915493
+      ],
+      "wins_across_three_seeds": 1,
+      "question_bootstrap_95_interval": [
+        -2.4413145539906105,
+        1.4084507042253522
+      ]
+    }
+  },
+  "listwise": {
+    "all": {
+      "mean_gain_percentage_points": 0.08354218880534674,
+      "gain_by_seed_percentage_points": [
+        0.2506265664160401,
+        -0.12531328320802004,
+        0.12531328320802004
+      ],
+      "wins_across_three_seeds": 2,
+      "question_bootstrap_95_interval": [
+        -1.0025062656641603,
+        1.1695906432748537
+      ]
+    },
+    "disagreement": {
+      "mean_gain_percentage_points": 0.18779342723004716,
+      "gain_by_seed_percentage_points": [
+        0.5633802816901409,
+        -0.28169014084507044,
+        0.28169014084507044
+      ],
+      "wins_across_three_seeds": 2,
+      "question_bootstrap_95_interval": [
+        -2.253521126760563,
+        2.7230046948356805
+      ]
+    }
+  }
+}

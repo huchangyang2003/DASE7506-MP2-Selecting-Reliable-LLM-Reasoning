@@ -1,0 +1,59 @@
+{
+  "completed_at_utc": "2026-10-22T14:28:11.558183+00:00",
+  "method_id": "mp2-final-oof-arithmetic-seed20261022",
+  "method_and_weights_unchanged_after_test": true,
+  "test_evaluated": true,
+  "official_test": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "test",
+    "correct": 384,
+    "n": 467,
+    "accuracy": 82.22698072805139,
+    "scoring_seconds": 0.021967200002109166
+  },
+  "historical_v1": {
+    "correct": 368,
+    "n": 467,
+    "accuracy": 78.80085653104925
+  },
+  "net_correct_gain": 16,
+  "gain_percentage_points": 3.4261241970021414,
+  "resources": {
+    "evaluated_at_utc": "2026-10-22T14:13:23.375065+00:00",
+    "split": "test",
+    "n": 467,
+    "correct": 384,
+    "accuracy": 82.22698072805139,
+    "prediction_process_wall_seconds": 0.7184645999986969,
+    "scoring_process_wall_seconds": 0.1348455000006652,
+    "total_process_wall_seconds": 0.8533100999993621,
+    "timing_scope": "One fresh prediction process plus independent scorer, including startup/imports/loading/preprocessing",
+    "thread_limits": {
+      "OMP_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4"
+    },
+    "cpu": "Intel Core i7-14700K",
+    "processor_identifier": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "uncompressed_inference_asset_bytes": 203273,
+    "physical_asset_bytes": 204937,
+    "reference_cpu_eligibility_confirmed": false,
+    "frozen_files_unchanged_after_evaluation": true,
+    "freeze_sha256": "48c20f69cfb3dc567aa6551b32bf599bd081ae4d55992b66bac073e357bd5590",
+    "selection_unchanged_after_test": true,
+    "test_will_not_be_used_for_further_tuning": true
+  },
+  "isolated_offline_reproduction_passed": true,
+  "report": "REPORT.pdf",
+  "report_page_limit": 10,
+  "report_pages": 10,
+  "new_training_after_test": false,
+  "external_publication_or_submission_performed": false,
+  "historical_snapshots_retained": [
+    "FINAL_SELECTION.json",
+    "FREEZE.json",
+    "FINAL_FILE_MANIFEST.json"
+  ],
+  "note": "Earlier snapshots accurately describe their pre-test state; this file is the current completion record.",
+  "report_editorial_revision_at_utc": "2026-10-22T15:44:20.560562+00:00"
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "distinct_valid_answers": 1,
+    "n": 443,
+    "control": 100.0,
+    "coverage": 100.0,
+    "arithmetic": 100.0
+  },
+  {
+    "distinct_valid_answers": 2,
+    "n": 227,
+    "control": 88.2525697503671,
+    "coverage": 88.2525697503671,
+    "arithmetic": 89.28046989720998
+  },
+  {
+    "distinct_valid_answers": 3,
+    "n": 108,
+    "control": 77.46913580246914,
+    "coverage": 77.1604938271605,
+    "arithmetic": 77.46913580246914
+  },
+  {
+    "distinct_valid_answers": 4,
+    "n": 20,
+    "control": 58.333333333333336,
+    "coverage": 63.33333333333333,
+    "arithmetic": 68.33333333333333
+  }
+]
