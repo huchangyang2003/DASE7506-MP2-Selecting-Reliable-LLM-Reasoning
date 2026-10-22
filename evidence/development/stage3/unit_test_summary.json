@@ -1,0 +1,9 @@
+{
+  "command": "python -B -m unittest discover -s tests -v",
+  "ran": 17,
+  "passed": 17,
+  "failed": 0,
+  "seconds": 0.079,
+  "observed_before_stage3_training": true,
+  "evidence": "Tool-returned unittest output; five fusion checks plus twelve existing checks"
+}

@@ -1,0 +1,72 @@
+{
+  "method_id": "mp2-final-oof-arithmetic-seed20261022",
+  "frozen_at_utc": "2026-10-22T14:09:07.716540+00:00",
+  "status": "inference_version_locked_before_final_test",
+  "files": {
+    "code/arithmetic_features.py": {
+      "sha256": "c8feff01581ba500caddc5baef6f0b0c9569f8d11b463d8d07a77fe24c81d26a",
+      "bytes": 9009
+    },
+    "code/arithmetic_fusion_core.py": {
+      "sha256": "bce9d657f805ac9698ed632d21d37915ed6b48aaf242b57525c18717684982df",
+      "bytes": 1117
+    },
+    "code/common.py": {
+      "sha256": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
+      "bytes": 4192
+    },
+    "code/features.py": {
+      "sha256": "9aab65880376bdbf9926315daaadc7f884ab94bf114b0e1e6ded27251c23a5ac",
+      "bytes": 5258
+    },
+    "code/fusion_core.py": {
+      "sha256": "0abfce38908fa653cbaa93f0f9560dd2dce71000efebde8d5617b0bb07e40762",
+      "bytes": 3285
+    },
+    "code/methods/arithmetic_fusion.py": {
+      "sha256": "bab93b9a1ac75510894dd1fa9abb83e5ede6eae5345187e7e0dd49b0d1d36a44",
+      "bytes": 1432
+    },
+    "code/no_test_access.py": {
+      "sha256": "77ecbe3dbc0d28dfde8de79779d2ce49288ee6b3094c875d2dce4f29f227daee",
+      "bytes": 681
+    },
+    "code/predict.py": {
+      "sha256": "e7a627fbdc9ef8d4ab3189a6fa5ac02d56ae703ccd1a81507aea0bd66e042162",
+      "bytes": 1680
+    },
+    "code/requirements.txt": {
+      "sha256": "5c12d85e7c08038d1dd9ffbf8119d12ce808885230a47e2bf65dcd9f114659d5",
+      "bytes": 13
+    },
+    "code/run_official.py": {
+      "sha256": "18ccf6b1eae28f1da2755de86857785f355cd567f833397c1b07e3c4690cc86b",
+      "bytes": 588
+    },
+    "code/score_predictions.py": {
+      "sha256": "fe12b809b82117aea722e5dfef7a55a88950a7cf50c49ec2ea007ea847959960",
+      "bytes": 1283
+    },
+    "code/submission.py": {
+      "sha256": "1ebc850c5bfb7efe149cbe03398f7996e83c15d9a724c4764511962cfe73b02a",
+      "bytes": 140
+    },
+    "code/verify_input_only.py": {
+      "sha256": "290339f0e3699b19a2bfeb2bb33fdd2b01d4ce1e647ff6627d28a87655e0ba5c",
+      "bytes": 2784
+    },
+    "checkpoint/config.json": {
+      "sha256": "80778798203066f463aefab58c0db06c9739d9b0cc422e2a06ba2ae6f2e22fa4",
+      "bytes": 24253
+    },
+    "checkpoint/model.npz": {
+      "sha256": "deb05856bff0c5938bb833ec5b66b5b4ceba0dc26149c659d299dba46d3f1432",
+      "bytes": 180684
+    }
+  },
+  "selection_sha256": "0b6aa177df8e192dee2a8e6462ced81bc89d8172203e7fb77b0d2a641aed4afb",
+  "validation_is_reproduction_only": true,
+  "new_training": false,
+  "test_evaluated": false,
+  "note": "Do not alter selected sources, weights or hyperparameters based on later test scores."
+}

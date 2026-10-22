@@ -1,0 +1,12 @@
+{
+  "environment_limit": 4,
+  "live_blas_query": [
+    {
+      "library": "libscipy_openblas64_-ed4f167a5330424524f45258e7ca2c8d.dll",
+      "symbol": "scipy_openblas_get_num_threads64_",
+      "active_blas_threads": 4
+    }
+  ],
+  "no_model_workers": true,
+  "official_prediction_and_scoring_serial": true
+}

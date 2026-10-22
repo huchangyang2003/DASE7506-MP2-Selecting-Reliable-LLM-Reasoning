@@ -1,0 +1,11 @@
+{
+  "decided_at_utc": "2026-10-22T13:59:20.550053+00:00",
+  "best_average_mode_in_stage5": "set16",
+  "passes_minimum_practical_candidate_rule": false,
+  "recommended_for_next_freeze": "stage4_arithmetic",
+  "recommended_checkpoint": "runs/stage4_final/arithmetic_seed20261022/checkpoint",
+  "experimental_checkpoint": "runs/stage5/set16_seed20261022/checkpoint",
+  "reason": "Mean disagreement gain +0.5634pp, below predeclared 1pp threshold; two seed gains, one loss; interval crosses zero.",
+  "final_model_frozen_or_tested": false,
+  "original_submission_and_v1_unchanged": true
+}

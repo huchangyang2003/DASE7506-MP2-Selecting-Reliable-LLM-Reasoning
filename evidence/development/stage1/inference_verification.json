@@ -1,0 +1,13 @@
+{
+  "checkpoint_reload_matches_official_validation_predictions": true,
+  "variable_bank_size_17": true,
+  "new_ids_same_choices": true,
+  "reordering_changed_indices": 1,
+  "reordering_changed_numeric_answers": 0,
+  "opened_files_during_predict": [
+    "runs\\stage1\\listwise_seed20261022\\checkpoint\\config.json",
+    "runs\\stage1\\listwise_seed20261022\\checkpoint\\model.npz"
+  ],
+  "no_reference_files_opened_during_predict": true,
+  "test_evaluated": false
+}

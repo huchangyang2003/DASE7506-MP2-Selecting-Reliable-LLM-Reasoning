@@ -1,0 +1,29 @@
+[
+  {
+    "objective": "bce",
+    "seeds": 3,
+    "accuracy_mean": 91.60401002506266,
+    "accuracy_sample_std": 0.1253132832080155,
+    "disagreement_mean": 81.12676056338029,
+    "disagreement_sample_std": 0.2816901408450718,
+    "total_training_wall_seconds": 14.39563459999772
+  },
+  {
+    "objective": "pairwise",
+    "seeds": 3,
+    "accuracy_mean": 91.3533834586466,
+    "accuracy_sample_std": 0.45182346810324825,
+    "disagreement_mean": 80.56338028169016,
+    "disagreement_sample_std": 1.0156482466095715,
+    "total_training_wall_seconds": 14.910058700002992
+  },
+  {
+    "objective": "listwise",
+    "seeds": 3,
+    "accuracy_mean": 91.687552213868,
+    "accuracy_sample_std": 0.2893986311727424,
+    "disagreement_mean": 81.31455399061034,
+    "disagreement_sample_std": 0.6505355145798632,
+    "total_training_wall_seconds": 14.768638900000951
+  }
+]

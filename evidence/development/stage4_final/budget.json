@@ -1,0 +1,29 @@
+{
+  "declared_at_utc": "2026-10-22T13:39:04.278601+00:00",
+  "modes": [
+    "control",
+    "coverage",
+    "arithmetic"
+  ],
+  "seeds": [
+    20261022,
+    20261023,
+    20261024
+  ],
+  "new_base_fits": 0,
+  "fusion_fits": 9,
+  "official_validation_runs": 9,
+  "meta_l2": 0.001,
+  "primary_seed": 20261022,
+  "training_split_only": true,
+  "test_evaluation": false,
+  "plan_sha256": "4bc3766df6cf68d0527b1da4a9f6929203cbb3b29540174ae3d55e92612ca462",
+  "source_sha256": {
+    "arithmetic_features.py": "c8feff01581ba500caddc5baef6f0b0c9569f8d11b463d8d07a77fe24c81d26a",
+    "arithmetic_fusion_core.py": "bce9d657f805ac9698ed632d21d37915ed6b48aaf242b57525c18717684982df",
+    "methods/arithmetic_fusion.py": "bab93b9a1ac75510894dd1fa9abb83e5ede6eae5345187e7e0dd49b0d1d36a44",
+    "train_stage4.py": "642fae9198c1df0144bf0bcc70d0f59c9dfc9a2b799d288e2bb7ad68ac461b7c",
+    "fusion_core.py": "0abfce38908fa653cbaa93f0f9560dd2dce71000efebde8d5617b0bb07e40762",
+    "stage3_logistic.py": "093f2192b7af475307354e87612d6287961d1d2317f01bb96c994e38648e8b76"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "mode": "stacking_0.1",
+  "seed": 20261023,
+  "seconds": 0.00699729999905685,
+  "optimization": {
+    "converged": true,
+    "stop_reason": "gradient_tolerance",
+    "iterations": 10,
+    "final_loss": 0.4148427062353907,
+    "gradient_inf": 1.646028709237357e-07,
+    "trace": [
+      {
+        "iteration": 0,
+        "loss": 0.557194864405228,
+        "gradient_inf": 0.23168040670763446
+      },
+      {
+        "iteration": 1,
+        "loss": 0.4278775095464377,
+        "gradient_inf": 0.044232992229198756
+      },
+      {
+        "iteration": 2,
+        "loss": 0.4218508286469997,
+        "gradient_inf": 0.026001214796748315
+      },
+      {
+        "iteration": 3,
+        "loss": 0.4155534001099164,
+        "gradient_inf": 0.011441026032959104
+      },
+      {
+        "iteration": 4,
+        "loss": 0.4148997861147719,
+        "gradient_inf": 0.003354237318760398
+      },
+      {
+        "iteration": 5,
+        "loss": 0.4148451496771016,
+        "gradient_inf": 0.0008947394560163027
+      },
+      {
+        "iteration": 6,
+        "loss": 0.4148429517956432,
+        "gradient_inf": 0.0001589058034523101
+      },
+      {
+        "iteration": 7,
+        "loss": 0.4148427610259418,
+        "gradient_inf": 6.691559184764627e-05
+      },
+      {
+        "iteration": 8,
+        "loss": 0.41484270796178196,
+        "gradient_inf": 1.3311043805390096e-05
+      },
+      {
+        "iteration": 9,
+        "loss": 0.414842706243423,
+        "gradient_inf": 1.368174654091392e-06
+      },
+      {
+        "iteration": 10,
+        "loss": 0.4148427062353907,
+        "gradient_inf": 1.646028709237357e-07
+      }
+    ]
+  },
+  "weights_on_standardized_features": [
+    0.2320903567761289,
+    0.12171708869460594,
+    0.2656066552303478,
+    0.4251526896426353,
+    0.3777493832707495,
+    0.11151550250815742,
+    -0.017484256963390347,
+    0.11657882964297392
+  ],
+  "intercept": 1.3458679530108015,
+  "fit_rows": 19020,
+  "fit_source": "TRAIN OOF only"
+}

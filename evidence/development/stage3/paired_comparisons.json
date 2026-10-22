@@ -1,0 +1,370 @@
+{
+  "equal_average": {
+    "all": {
+      "mean_gain_percentage_points": -1.0442773600668336,
+      "gain_by_seed_percentage_points": [
+        -1.1278195488721803,
+        -0.8771929824561403,
+        -1.1278195488721803
+      ],
+      "seed_wins": 0,
+      "question_bootstrap_95_interval": [
+        -1.8796992481203008,
+        -0.2506265664160401
+      ],
+      "paired_counts_by_seed": [
+        {
+          "seed": 20261022,
+          "corrected": 5,
+          "broken": 14
+        },
+        {
+          "seed": 20261023,
+          "corrected": 6,
+          "broken": 13
+        },
+        {
+          "seed": 20261024,
+          "corrected": 6,
+          "broken": 15
+        }
+      ]
+    },
+    "disagreement": {
+      "mean_gain_percentage_points": -2.3474178403755865,
+      "gain_by_seed_percentage_points": [
+        -2.535211267605634,
+        -1.971830985915493,
+        -2.535211267605634
+      ],
+      "seed_wins": 0,
+      "question_bootstrap_95_interval": [
+        -4.319248826291079,
+        -0.5633802816901408
+      ],
+      "paired_counts_by_seed": [
+        {
+          "seed": 20261022,
+          "corrected": 5,
+          "broken": 14
+        },
+        {
+          "seed": 20261023,
+          "corrected": 6,
+          "broken": 13
+        },
+        {
+          "seed": 20261024,
+          "corrected": 6,
+          "broken": 15
+        }
+      ]
+    },
+    "other": {
+      "mean_gain_percentage_points": 0.0,
+      "gain_by_seed_percentage_points": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "seed_wins": 0,
+      "question_bootstrap_95_interval": [
+        0.0,
+        0.0
+      ],
+      "paired_counts_by_seed": [
+        {
+          "seed": 20261022,
+          "corrected": 0,
+          "broken": 0
+        },
+        {
+          "seed": 20261023,
+          "corrected": 0,
+          "broken": 0
+        },
+        {
+          "seed": 20261024,
+          "corrected": 0,
+          "broken": 0
+        }
+      ]
+    }
+  },
+  "stacking_0.001": {
+    "all": {
+      "mean_gain_percentage_points": 0.960735171261487,
+      "gain_by_seed_percentage_points": [
+        1.1278195488721803,
+        0.6265664160401002,
+        1.1278195488721803
+      ],
+      "seed_wins": 3,
+      "question_bootstrap_95_interval": [
+        0.12531328320802004,
+        1.7961570593149543
+      ],
+      "paired_counts_by_seed": [
+        {
+          "seed": 20261022,
+          "corrected": 17,
+          "broken": 8
+        },
+        {
+          "seed": 20261023,
+          "corrected": 11,
+          "broken": 6
+        },
+        {
+          "seed": 20261024,
+          "corrected": 15,
+          "broken": 6
+        }
+      ]
+    },
+    "disagreement": {
+      "mean_gain_percentage_points": 2.1596244131455395,
+      "gain_by_seed_percentage_points": [
+        2.535211267605634,
+        1.4084507042253522,
+        2.535211267605634
+      ],
+      "seed_wins": 3,
+      "question_bootstrap_95_interval": [
+        0.2816901408450706,
+        4.037558685446009
+      ],
+      "paired_counts_by_seed": [
+        {
+          "seed": 20261022,
+          "corrected": 17,
+          "broken": 8
+        },
+        {
+          "seed": 20261023,
+          "corrected": 11,
+          "broken": 6
+        },
+        {
+          "seed": 20261024,
+          "corrected": 15,
+          "broken": 6
+        }
+      ]
+    },
+    "other": {
+      "mean_gain_percentage_points": 0.0,
+      "gain_by_seed_percentage_points": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "seed_wins": 0,
+      "question_bootstrap_95_interval": [
+        0.0,
+        0.0
+      ],
+      "paired_counts_by_seed": [
+        {
+          "seed": 20261022,
+          "corrected": 0,
+          "broken": 0
+        },
+        {
+          "seed": 20261023,
+          "corrected": 0,
+          "broken": 0
+        },
+        {
+          "seed": 20261024,
+          "corrected": 0,
+          "broken": 0
+        }
+      ]
+    }
+  },
+  "stacking_0.01": {
+    "all": {
+      "mean_gain_percentage_points": 0.6265664160401002,
+      "gain_by_seed_percentage_points": [
+        0.8771929824561403,
+        0.5012531328320802,
+        0.5012531328320802
+      ],
+      "seed_wins": 3,
+      "question_bootstrap_95_interval": [
+        -0.16708437761069336,
+        1.4202172096908938
+      ],
+      "paired_counts_by_seed": [
+        {
+          "seed": 20261022,
+          "corrected": 15,
+          "broken": 8
+        },
+        {
+          "seed": 20261023,
+          "corrected": 9,
+          "broken": 5
+        },
+        {
+          "seed": 20261024,
+          "corrected": 12,
+          "broken": 8
+        }
+      ]
+    },
+    "disagreement": {
+      "mean_gain_percentage_points": 1.4084507042253518,
+      "gain_by_seed_percentage_points": [
+        1.971830985915493,
+        1.1267605633802817,
+        1.1267605633802817
+      ],
+      "seed_wins": 3,
+      "question_bootstrap_95_interval": [
+        -0.3755868544600939,
+        3.1924882629107976
+      ],
+      "paired_counts_by_seed": [
+        {
+          "seed": 20261022,
+          "corrected": 15,
+          "broken": 8
+        },
+        {
+          "seed": 20261023,
+          "corrected": 9,
+          "broken": 5
+        },
+        {
+          "seed": 20261024,
+          "corrected": 12,
+          "broken": 8
+        }
+      ]
+    },
+    "other": {
+      "mean_gain_percentage_points": 0.0,
+      "gain_by_seed_percentage_points": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "seed_wins": 0,
+      "question_bootstrap_95_interval": [
+        0.0,
+        0.0
+      ],
+      "paired_counts_by_seed": [
+        {
+          "seed": 20261022,
+          "corrected": 0,
+          "broken": 0
+        },
+        {
+          "seed": 20261023,
+          "corrected": 0,
+          "broken": 0
+        },
+        {
+          "seed": 20261024,
+          "corrected": 0,
+          "broken": 0
+        }
+      ]
+    }
+  },
+  "stacking_0.1": {
+    "all": {
+      "mean_gain_percentage_points": 0.20885547201336674,
+      "gain_by_seed_percentage_points": [
+        0.2506265664160401,
+        0.2506265664160401,
+        0.12531328320802004
+      ],
+      "seed_wins": 3,
+      "question_bootstrap_95_interval": [
+        -0.5012531328320802,
+        0.9189640768588134
+      ],
+      "paired_counts_by_seed": [
+        {
+          "seed": 20261022,
+          "corrected": 12,
+          "broken": 10
+        },
+        {
+          "seed": 20261023,
+          "corrected": 7,
+          "broken": 5
+        },
+        {
+          "seed": 20261024,
+          "corrected": 9,
+          "broken": 8
+        }
+      ]
+    },
+    "disagreement": {
+      "mean_gain_percentage_points": 0.4694835680751173,
+      "gain_by_seed_percentage_points": [
+        0.5633802816901409,
+        0.5633802816901409,
+        0.28169014084507044
+      ],
+      "seed_wins": 3,
+      "question_bootstrap_95_interval": [
+        -1.1267605633802817,
+        2.065727699530516
+      ],
+      "paired_counts_by_seed": [
+        {
+          "seed": 20261022,
+          "corrected": 12,
+          "broken": 10
+        },
+        {
+          "seed": 20261023,
+          "corrected": 7,
+          "broken": 5
+        },
+        {
+          "seed": 20261024,
+          "corrected": 9,
+          "broken": 8
+        }
+      ]
+    },
+    "other": {
+      "mean_gain_percentage_points": 0.0,
+      "gain_by_seed_percentage_points": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "seed_wins": 0,
+      "question_bootstrap_95_interval": [
+        0.0,
+        0.0
+      ],
+      "paired_counts_by_seed": [
+        {
+          "seed": 20261022,
+          "corrected": 0,
+          "broken": 0
+        },
+        {
+          "seed": 20261023,
+          "corrected": 0,
+          "broken": 0
+        },
+        {
+          "seed": 20261024,
+          "corrected": 0,
+          "broken": 0
+        }
+      ]
+    }
+  }
+}

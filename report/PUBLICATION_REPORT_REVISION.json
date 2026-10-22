@@ -1,0 +1,10 @@
+{
+  "scope": "Report wording and repository presentation cleanup",
+  "pages": 10,
+  "new_training_or_method_selection": false,
+  "author_ai_paragraph_preserved": true,
+  "model_and_scores_unchanged": true,
+  "backup": "../Submission_Preparation/Publication_Report_20261022/before",
+  "pdf_sha256": "38cf87152c84de6fac2908ff5cf77b1d0de2308130b453a741abfdc61f10475f",
+  "document_revision": "frozen-v1.1"
+}

@@ -1,0 +1,22 @@
+{
+  "comparison": "Frozen final model vs historical frozen V1 only; post-freeze reporting, no selection",
+  "v1_correct": 368,
+  "final_correct": 384,
+  "n": 467,
+  "net_correct_gain": 16,
+  "gain_percentage_points": 3.4261241970021414,
+  "both_correct": 351,
+  "final_correct_v1_wrong": 33,
+  "v1_correct_final_wrong": 17,
+  "both_wrong": 66,
+  "paired_question_bootstrap_95_interval_pp": [
+    0.4282655246252677,
+    6.423982869379015
+  ],
+  "final_accuracy_wilson_95_interval_percent": [
+    78.50103871927703,
+    85.4270615703423
+  ],
+  "no_other_V2_methods_evaluated_on_test": true,
+  "caution": "Intervals descriptive, unadjusted for repeated validation development; original V1 test score was already known."
+}

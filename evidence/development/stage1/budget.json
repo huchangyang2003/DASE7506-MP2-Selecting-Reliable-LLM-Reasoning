@@ -1,0 +1,34 @@
+{
+  "declared_at_utc": "2026-10-22T12:52:28.692743+00:00",
+  "objectives": [
+    "bce",
+    "pairwise",
+    "listwise"
+  ],
+  "seeds": [
+    20261022,
+    20261023,
+    20261024
+  ],
+  "fits": 9,
+  "hidden": 32,
+  "epochs": 60,
+  "batch_questions": 128,
+  "learning_rate": 0.001,
+  "weight_l2": 0.0001,
+  "features": "unchanged V1 group features",
+  "protocol": "dase7506-mp2-open-hard-verifier-v5",
+  "training_split": "train",
+  "evaluation_split": "validation",
+  "test_evaluation": false,
+  "source_sha256": {
+    "train_ranker.py": "30cc5c9c562853308c917b6e5db13521d8878f6c925b563a2bb9a82bf2ad1d6f",
+    "objectives.py": "f71b23ef70180da37b747b7b809c7ddecdc895de50c588be28cf59235fff5f46",
+    "features.py": "9aab65880376bdbf9926315daaadc7f884ab94bf114b0e1e6ded27251c23a5ac",
+    "run_stage1.py": "cfc6054eff5d8ce26f0b72721829d5135725f9d1d5bbed7fe8bc9307cff81a56",
+    "methods/hybrid_model.py": "cf2a03026cdc755be0277b8c093162afd99665ba45c13c11e60ac3f5c2156f2b"
+  },
+  "plan_sha256": "eb00ae52dd9b62f0c4e20da3817187b7b9984323752d8590cf49073409e6823c",
+  "selection": "Highest mean disagreement accuracy across matched seeds, then mean full accuracy",
+  "promising_rule": "Positive mean disagreement gain over matched BCE and gain on at least two of three seeds"
+}

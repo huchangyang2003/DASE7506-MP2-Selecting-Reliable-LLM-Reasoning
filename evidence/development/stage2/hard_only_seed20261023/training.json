@@ -1,0 +1,290 @@
+{
+  "weight_mode": "hard_only",
+  "seed": 20261023,
+  "training_questions": 4755,
+  "training_seconds": 5.4482059000001755,
+  "training": {
+    "initial_parameter_sha256": "7557c774416127cf1f9070ddc608c4132773c0b38561dd29c89dfa3552f76784",
+    "question_shuffle_sha256": "02484cc30f619fab253329d8a45596420f73b9a0070c3d61c5605068bed451b1",
+    "epochs": 60,
+    "question_batch_size": 128,
+    "candidates_per_full_batch": 512,
+    "hidden": 32,
+    "learning_rate": 0.001,
+    "weight_l2": 0.0001,
+    "optimizer": "Adam beta1=0.9 beta2=0.999 epsilon=1e-8",
+    "updates": 2280,
+    "trace": [
+      {
+        "epoch": 1,
+        "online_weighted_question_data_loss": 0.6212484742564733
+      },
+      {
+        "epoch": 2,
+        "online_weighted_question_data_loss": 0.4894766515111071
+      },
+      {
+        "epoch": 3,
+        "online_weighted_question_data_loss": 0.4334256279105017
+      },
+      {
+        "epoch": 4,
+        "online_weighted_question_data_loss": 0.3962625338326744
+      },
+      {
+        "epoch": 5,
+        "online_weighted_question_data_loss": 0.373745449584616
+      },
+      {
+        "epoch": 6,
+        "online_weighted_question_data_loss": 0.3511318294031763
+      },
+      {
+        "epoch": 7,
+        "online_weighted_question_data_loss": 0.3354264969360691
+      },
+      {
+        "epoch": 8,
+        "online_weighted_question_data_loss": 0.3168222712918912
+      },
+      {
+        "epoch": 9,
+        "online_weighted_question_data_loss": 0.2998019841567199
+      },
+      {
+        "epoch": 10,
+        "online_weighted_question_data_loss": 0.28765504511247547
+      },
+      {
+        "epoch": 11,
+        "online_weighted_question_data_loss": 0.273233326902901
+      },
+      {
+        "epoch": 12,
+        "online_weighted_question_data_loss": 0.26596734348281076
+      },
+      {
+        "epoch": 13,
+        "online_weighted_question_data_loss": 0.2481607035523208
+      },
+      {
+        "epoch": 14,
+        "online_weighted_question_data_loss": 0.23471774746566917
+      },
+      {
+        "epoch": 15,
+        "online_weighted_question_data_loss": 0.22893792070550248
+      },
+      {
+        "epoch": 16,
+        "online_weighted_question_data_loss": 0.21431393233508844
+      },
+      {
+        "epoch": 17,
+        "online_weighted_question_data_loss": 0.2016497405702258
+      },
+      {
+        "epoch": 18,
+        "online_weighted_question_data_loss": 0.19287021108418234
+      },
+      {
+        "epoch": 19,
+        "online_weighted_question_data_loss": 0.1961169352353434
+      },
+      {
+        "epoch": 20,
+        "online_weighted_question_data_loss": 0.17625971153519507
+      },
+      {
+        "epoch": 21,
+        "online_weighted_question_data_loss": 0.16201576450457708
+      },
+      {
+        "epoch": 22,
+        "online_weighted_question_data_loss": 0.15089392367002213
+      },
+      {
+        "epoch": 23,
+        "online_weighted_question_data_loss": 0.14418765713865198
+      },
+      {
+        "epoch": 24,
+        "online_weighted_question_data_loss": 0.14801770317378982
+      },
+      {
+        "epoch": 25,
+        "online_weighted_question_data_loss": 0.13695472436247064
+      },
+      {
+        "epoch": 26,
+        "online_weighted_question_data_loss": 0.12403425811530414
+      },
+      {
+        "epoch": 27,
+        "online_weighted_question_data_loss": 0.11679162155566532
+      },
+      {
+        "epoch": 28,
+        "online_weighted_question_data_loss": 0.12152237472850065
+      },
+      {
+        "epoch": 29,
+        "online_weighted_question_data_loss": 0.10928319094684974
+      },
+      {
+        "epoch": 30,
+        "online_weighted_question_data_loss": 0.10076309073986692
+      },
+      {
+        "epoch": 31,
+        "online_weighted_question_data_loss": 0.09887256357196002
+      },
+      {
+        "epoch": 32,
+        "online_weighted_question_data_loss": 0.08816557806592383
+      },
+      {
+        "epoch": 33,
+        "online_weighted_question_data_loss": 0.08316303605662284
+      },
+      {
+        "epoch": 34,
+        "online_weighted_question_data_loss": 0.08351231765483833
+      },
+      {
+        "epoch": 35,
+        "online_weighted_question_data_loss": 0.08468159179112136
+      },
+      {
+        "epoch": 36,
+        "online_weighted_question_data_loss": 0.07593225254966132
+      },
+      {
+        "epoch": 37,
+        "online_weighted_question_data_loss": 0.07085925761833552
+      },
+      {
+        "epoch": 38,
+        "online_weighted_question_data_loss": 0.08039685297212891
+      },
+      {
+        "epoch": 39,
+        "online_weighted_question_data_loss": 0.07613617318881172
+      },
+      {
+        "epoch": 40,
+        "online_weighted_question_data_loss": 0.07255266360178605
+      },
+      {
+        "epoch": 41,
+        "online_weighted_question_data_loss": 0.06741028092057297
+      },
+      {
+        "epoch": 42,
+        "online_weighted_question_data_loss": 0.06388801822338946
+      },
+      {
+        "epoch": 43,
+        "online_weighted_question_data_loss": 0.06085369076215506
+      },
+      {
+        "epoch": 44,
+        "online_weighted_question_data_loss": 0.05674258919528732
+      },
+      {
+        "epoch": 45,
+        "online_weighted_question_data_loss": 0.05103226639291215
+      },
+      {
+        "epoch": 46,
+        "online_weighted_question_data_loss": 0.04658879535517545
+      },
+      {
+        "epoch": 47,
+        "online_weighted_question_data_loss": 0.0460488685160938
+      },
+      {
+        "epoch": 48,
+        "online_weighted_question_data_loss": 0.04275238631071854
+      },
+      {
+        "epoch": 49,
+        "online_weighted_question_data_loss": 0.045550246213951574
+      },
+      {
+        "epoch": 50,
+        "online_weighted_question_data_loss": 0.05144286627805822
+      },
+      {
+        "epoch": 51,
+        "online_weighted_question_data_loss": 0.05966412499938728
+      },
+      {
+        "epoch": 52,
+        "online_weighted_question_data_loss": 0.054215846897017694
+      },
+      {
+        "epoch": 53,
+        "online_weighted_question_data_loss": 0.06534904762554118
+      },
+      {
+        "epoch": 54,
+        "online_weighted_question_data_loss": 0.06461373067036913
+      },
+      {
+        "epoch": 55,
+        "online_weighted_question_data_loss": 0.05623920001128745
+      },
+      {
+        "epoch": 56,
+        "online_weighted_question_data_loss": 0.05266857362272988
+      },
+      {
+        "epoch": 57,
+        "online_weighted_question_data_loss": 0.04459481340070127
+      },
+      {
+        "epoch": 58,
+        "online_weighted_question_data_loss": 0.04092894427940547
+      },
+      {
+        "epoch": 59,
+        "online_weighted_question_data_loss": 0.03327959680500843
+      },
+      {
+        "epoch": 60,
+        "online_weighted_question_data_loss": 0.0345122176507482
+      }
+    ]
+  },
+  "question_weights": {
+    "mode": "hard_only",
+    "train_questions": 4755,
+    "disagreement_questions": 2114,
+    "other_questions": 2641,
+    "raw_weight_mean": 0.44458464773922185,
+    "normalization": "Divide by full TRAIN raw-weight mean; no batch renormalization",
+    "mean_normalized_weight": 1.0,
+    "hard_weight": 2.2492904663085938,
+    "other_weight": 0.0,
+    "hard_fraction_of_total_weight": 1.0
+  },
+  "inference_uncompressed_bytes": 176357,
+  "opened_training_jsonl": [
+    "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\V2_Ranking_Objective\\code\\data\\candidates\\gsm8k_train.jsonl",
+    "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\V2_Ranking_Objective\\code\\data\\gsm8k_train.jsonl"
+  ],
+  "no_validation_or_test_fit": true,
+  "all_train_inputs_used_for_standardization": true,
+  "source_sha256": {
+    "train_weighted.py": "34eeda7f8e81f6b1b992475b9f67ec1d1f646023cafe326e5d1135e3dca252bd",
+    "weighted_bce.py": "60a94b002ce149cfb5d74aab3097ca9d148bb3843b255620c06b08e4b8ffc849",
+    "objectives.py": "f71b23ef70180da37b747b7b809c7ddecdc895de50c588be28cf59235fff5f46",
+    "features.py": "9aab65880376bdbf9926315daaadc7f884ab94bf114b0e1e6ded27251c23a5ac",
+    "methods/hybrid_model.py": "cf2a03026cdc755be0277b8c093162afd99665ba45c13c11e60ac3f5c2156f2b"
+  },
+  "checkpoint_sha256": {
+    "model.npz": "4f96ec208ef93d0b9c7d8fde9a082e0a7121b8804dc1402f367c35a0906a08bd",
+    "config.json": "4cd37b90083589dfd817a58eabcd7266bca0f597e07880d5621785a1435149a4"
+  }
+}

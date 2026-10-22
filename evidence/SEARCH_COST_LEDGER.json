@@ -1,0 +1,13 @@
+{
+  "measured_training_entry_seconds_by_round": [
+    44.07433220000166,
+    68.00894590000826,
+    64.03438129999995,
+    1.9771529999998165,
+    8.97484770000301
+  ],
+  "sum_seconds": 187.0696601000127,
+  "new_fits": 78,
+  "official_validation_runs": 57,
+  "note": "Recorded successful entry timings only; includes 9 superseded stage4 fits; excludes parser audits, failed unmeasured attempts and developer time."
+}

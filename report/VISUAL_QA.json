@@ -1,0 +1,18 @@
+{
+  "pdf": "REPORT.pdf",
+  "pages": 10,
+  "all_latest_rendered_pages_visually_inspected": true,
+  "renderer": "Poppler pdftoppm, 110 dpi",
+  "checks": [
+    "no clipping or overlap",
+    "readable tables",
+    "bottom-right page numbers only",
+    "substantive text in body style",
+    "AI wording preserved",
+    "recorded results preserved",
+    "pages 2-9 pixel-identical to prior inspected edition",
+    "revised pages 1 and 10 visually inspected"
+  ],
+  "visual_issues_remaining": 0,
+  "pdf_sha256": "38cf87152c84de6fac2908ff5cf77b1d0de2308130b453a741abfdc61f10475f"
+}
