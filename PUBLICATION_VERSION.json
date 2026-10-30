@@ -1,13 +1,8 @@
 {
-  "release_id": "frozen-v1.1",
-  "method_id": "mp2-final-oof-arithmetic-seed20261022",
-  "test_correct": 384,
-  "test_n": 467,
-  "accuracy": 82.22698072805139,
-  "report_pages": 10,
-  "primary_seed": 20261022,
-  "supplementary_experiments_included": false,
-  "frozen_inference_unchanged": true,
-  "data_distributed_in_git": false,
-  "model_revision": "unchanged from frozen-v1"
+  "tag": "frozen-v2",
+  "previous_tag": "frozen-v1.1",
+  "previous_commit": "cf84d5c2045a80db9174bd3657030ab50f8b9b00",
+  "scope": "New final CE + pooling method, compact evidence, matching report and portable reproduction",
+  "historical_tags_preserved": true,
+  "publication_preparation_started_at_utc": "2026-10-30T12:37:51.083500+00:00"
 }

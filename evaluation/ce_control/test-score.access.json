@@ -1,0 +1,21 @@
+{
+  "role": "test_score",
+  "opened": [
+    "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\DASE7506-MP2-main\\code\\data\\candidates\\gsm8k_test.jsonl",
+    "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\DASE7506-MP2-main\\code\\data\\candidates\\gsm8k_test.npz",
+    "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\DASE7506-MP2-main\\code\\data\\gsm8k_test.jsonl"
+  ],
+  "denied": [],
+  "native_blas_threads": [
+    {
+      "library": "libscipy_openblas64_-ed4f167a5330424524f45258e7ca2c8d.dll",
+      "threads": 4
+    }
+  ],
+  "official_source": "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\DASE7506-MP2-main\\code\\score_predictions.py",
+  "thread_environment": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4"
+  }
+}

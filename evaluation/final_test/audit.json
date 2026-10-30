@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "mode": "read-only receipt and hash reconciliation; no runner or scorer invocation",
+  "new_fits": 0,
+  "new_official_scoring_calls": 0,
+  "new_prediction_calls": 0,
+  "official_score": [
+    393,
+    467
+  ],
+  "net_vs_historical_formal": 9,
+  "protected_prior_artifacts": 518,
+  "unchanged_source_files": 48,
+  "original_plan_budget_unchanged": true,
+  "prediction_gold_isolation_verified": true,
+  "one_prediction_and_one_score_verified": true,
+  "pre_score_prediction_hash_verified": true,
+  "summary_completion_hash_verified": true
+}

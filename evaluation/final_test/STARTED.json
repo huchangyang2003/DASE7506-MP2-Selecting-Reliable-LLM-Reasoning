@@ -1,7 +1,6 @@
 {
-  "started_at_utc": "2026-10-22T14:13:22.519051+00:00",
-  "freeze_sha256": "48c20f69cfb3dc567aa6551b32bf599bd081ae4d55992b66bac073e357bd5590",
-  "all_frozen_hashes_checked_before_test": true,
-  "new_fits": 0,
-  "new_model_selection": false
+  "started_at_utc": "2026-10-30T12:08:14.053417+00:00",
+  "prediction_calls": 0,
+  "official_test_scoring_calls": 0,
+  "new_fits": 0
 }

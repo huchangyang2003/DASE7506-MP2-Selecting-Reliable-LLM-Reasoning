@@ -1,15 +1,17 @@
 {
-  "method_id": "mp2-final-oof-arithmetic-seed20261022",
-  "frozen_at_utc": "2026-10-22T14:09:07.716540+00:00",
-  "status": "inference_version_locked_before_final_test",
+  "method_id": "v6_ce_answer_pooling_alpha1_temperature1",
+  "record_kind": "post_scoring_packaging_manifest",
+  "created_at_utc": "2026-10-30T12:40:21.436767+00:00",
+  "not_a_pre_test_freeze": true,
+  "original_pre_test_freeze": "evaluation/final_test/PRE_TEST_FREEZE.json",
   "files": {
     "code/arithmetic_features.py": {
       "sha256": "c8feff01581ba500caddc5baef6f0b0c9569f8d11b463d8d07a77fe24c81d26a",
       "bytes": 9009
     },
-    "code/arithmetic_fusion_core.py": {
-      "sha256": "bce9d657f805ac9698ed632d21d37915ed6b48aaf242b57525c18717684982df",
-      "bytes": 1117
+    "code/ce_core.py": {
+      "sha256": "c96581ad4e9106f8c99d3cf65981990cdf0e2b50d2ff0a51b90470927d10fd45",
+      "bytes": 888
     },
     "code/common.py": {
       "sha256": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
@@ -19,54 +21,40 @@
       "sha256": "9aab65880376bdbf9926315daaadc7f884ab94bf114b0e1e6ded27251c23a5ac",
       "bytes": 5258
     },
-    "code/fusion_core.py": {
-      "sha256": "0abfce38908fa653cbaa93f0f9560dd2dce71000efebde8d5617b0bb07e40762",
-      "bytes": 3285
+    "code/linear_core.py": {
+      "sha256": "7904964d1c1d9f412d4fc30a7f901f49353d2983cb03b5ea45990b9b8140cb73",
+      "bytes": 4934
     },
-    "code/methods/arithmetic_fusion.py": {
-      "sha256": "bab93b9a1ac75510894dd1fa9abb83e5ede6eae5345187e7e0dd49b0d1d36a44",
-      "bytes": 1432
-    },
-    "code/no_test_access.py": {
-      "sha256": "77ecbe3dbc0d28dfde8de79779d2ce49288ee6b3094c875d2dce4f29f227daee",
-      "bytes": 681
+    "code/pooling_core.py": {
+      "sha256": "d3ad77cd6057335caa589c90551ac92fea8cdfcc0cf2fb15b9f3e5aa71b7aab2",
+      "bytes": 2502
     },
     "code/predict.py": {
       "sha256": "e7a627fbdc9ef8d4ab3189a6fa5ac02d56ae703ccd1a81507aea0bd66e042162",
       "bytes": 1680
-    },
-    "code/requirements.txt": {
-      "sha256": "5c12d85e7c08038d1dd9ffbf8119d12ce808885230a47e2bf65dcd9f114659d5",
-      "bytes": 13
-    },
-    "code/run_official.py": {
-      "sha256": "18ccf6b1eae28f1da2755de86857785f355cd567f833397c1b07e3c4690cc86b",
-      "bytes": 588
     },
     "code/score_predictions.py": {
       "sha256": "fe12b809b82117aea722e5dfef7a55a88950a7cf50c49ec2ea007ea847959960",
       "bytes": 1283
     },
     "code/submission.py": {
-      "sha256": "1ebc850c5bfb7efe149cbe03398f7996e83c15d9a724c4764511962cfe73b02a",
-      "bytes": 140
+      "sha256": "82d54087a02521da2e9fea9a65da1a335a35b7c4aed197b92e0d343c9d83b25c",
+      "bytes": 619
     },
-    "code/verify_input_only.py": {
-      "sha256": "290339f0e3699b19a2bfeb2bb33fdd2b01d4ce1e647ff6627d28a87655e0ba5c",
-      "bytes": 2784
+    "checkpoint/baseline/config.json": {
+      "sha256": "c7c4f3989ad060df1dde8c1cf59fb53d7f5e8baabf31a7c214d9d5ef8ccc48cf",
+      "bytes": 24217
+    },
+    "checkpoint/baseline/model.npz": {
+      "sha256": "a131cd6422d08c4496cf0c344daa80ad4484f3bb3af2bc773ba83e2051446ba6",
+      "bytes": 26702
     },
     "checkpoint/config.json": {
-      "sha256": "80778798203066f463aefab58c0db06c9739d9b0cc422e2a06ba2ae6f2e22fa4",
-      "bytes": 24253
-    },
-    "checkpoint/model.npz": {
-      "sha256": "deb05856bff0c5938bb833ec5b66b5b4ceba0dc26149c659d299dba46d3f1432",
-      "bytes": 180684
+      "sha256": "316a6b23a25912f851d4af90c27f230ec9db8d778a4ad4b4a97db1fc4990e9fa",
+      "bytes": 362
     }
   },
-  "selection_sha256": "0b6aa177df8e192dee2a8e6462ced81bc89d8172203e7fb77b0d2a641aed4afb",
-  "validation_is_reproduction_only": true,
-  "new_training": false,
-  "test_evaluated": false,
-  "note": "Do not alter selected sources, weights or hyperparameters based on later test scores."
+  "selection_sha256": "b1aa30b318ad1024afe778f9438032f5c846f11f4c83206e313832437971c7fd",
+  "inference_function_AST_identity_checked": true,
+  "no_model_parameter_changes": true
 }

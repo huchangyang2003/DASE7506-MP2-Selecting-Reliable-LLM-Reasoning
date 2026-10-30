@@ -1,9 +1,0 @@
-{
-  "best_average_objective": "listwise",
-  "promising_under_predeclared_rule": true,
-  "primary_seed": 20261022,
-  "development_checkpoint": "runs/stage1/listwise_seed20261022/checkpoint",
-  "not_a_final_submission_or_test_result": true,
-  "test_accessed_for_training_or_evaluation": false,
-  "note": "Seed-averaged results summarize repeated single models, not an inference ensemble. V1 public test was already seen before this development; intervals are descriptive on reused validation."
-}

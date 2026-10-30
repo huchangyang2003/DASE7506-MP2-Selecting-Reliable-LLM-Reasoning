@@ -1,0 +1,137 @@
+{
+  "completed_at_utc": "2026-10-30T12:12:57.638248+00:00",
+  "candidate": "CE_uniform_e0.01_h0.01",
+  "official_test": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "test",
+    "correct": 384,
+    "n": 467,
+    "accuracy": 82.22698072805139,
+    "scoring_seconds": 0.0195467000012286
+  },
+  "paired": {
+    "A_vs_CE": {
+      "n": 467,
+      "new_correct": 393,
+      "control_correct": 384,
+      "fixed": 13,
+      "broken": 4,
+      "net_correct": 9,
+      "different_indices": 208,
+      "different_indices_same_valid_answer": 191,
+      "numeric_or_invalid_answer_changes": 17
+    },
+    "CE_vs_historical_formal": {
+      "n": 467,
+      "new_correct": 384,
+      "control_correct": 384,
+      "fixed": 23,
+      "broken": 23,
+      "net_correct": 0,
+      "different_indices": 231,
+      "different_indices_same_valid_answer": 180,
+      "numeric_or_invalid_answer_changes": 51
+    }
+  },
+  "prediction_process": {
+    "command": [
+      "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\DASE7506-MP2-main\\code\\.venv\\Scripts\\python.exe",
+      "-B",
+      "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\V6_Answer_Group_Study\\code\\final_test_process.py",
+      "predict.py",
+      "--method",
+      "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\V3_Block_Regularization\\code\\submission.py",
+      "--checkpoint",
+      "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\V3_Block_Regularization\\runs\\step1\\uniform_ce_e0.01_h0.01\\checkpoint",
+      "--split",
+      "test",
+      "--data-dir",
+      "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\DASE7506-MP2-main\\code\\data",
+      "--output",
+      "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\V6_Answer_Group_Study\\runs\\final_test\\ce_baseline_20261030\\test-predictions.json"
+    ],
+    "wall_seconds": 0.7462916000004043,
+    "returncode": 0,
+    "access": {
+      "role": "test_predict",
+      "opened": [
+        "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\DASE7506-MP2-main\\code\\data\\candidates\\gsm8k_test.jsonl",
+        "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\DASE7506-MP2-main\\code\\data\\candidates\\gsm8k_test.npz"
+      ],
+      "denied": [],
+      "native_blas_threads": [
+        {
+          "library": "libscipy_openblas64_-ed4f167a5330424524f45258e7ca2c8d.dll",
+          "threads": 4
+        }
+      ],
+      "official_source": "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\DASE7506-MP2-main\\code\\predict.py",
+      "thread_environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      }
+    }
+  },
+  "scoring_process": {
+    "command": [
+      "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\DASE7506-MP2-main\\code\\.venv\\Scripts\\python.exe",
+      "-B",
+      "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\V6_Answer_Group_Study\\code\\final_test_process.py",
+      "score_predictions.py",
+      "--predictions",
+      "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\V6_Answer_Group_Study\\runs\\final_test\\ce_baseline_20261030\\test-predictions.json",
+      "--split",
+      "test",
+      "--data-dir",
+      "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\DASE7506-MP2-main\\code\\data",
+      "--output",
+      "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\V6_Answer_Group_Study\\runs\\final_test\\ce_baseline_20261030\\test-score.json"
+    ],
+    "wall_seconds": 0.19758339999680175,
+    "returncode": 0,
+    "access": {
+      "role": "test_score",
+      "opened": [
+        "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\DASE7506-MP2-main\\code\\data\\candidates\\gsm8k_test.jsonl",
+        "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\DASE7506-MP2-main\\code\\data\\candidates\\gsm8k_test.npz",
+        "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\DASE7506-MP2-main\\code\\data\\gsm8k_test.jsonl"
+      ],
+      "denied": [],
+      "native_blas_threads": [
+        {
+          "library": "libscipy_openblas64_-ed4f167a5330424524f45258e7ca2c8d.dll",
+          "threads": 4
+        }
+      ],
+      "official_source": "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\DASE7506-MP2-main\\code\\score_predictions.py",
+      "thread_environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      }
+    }
+  },
+  "total_fresh_prediction_and_scoring_seconds": 0.943874999997206,
+  "uncompressed_inference_asset_bytes": 50441,
+  "local_resource_screen_passed": true,
+  "reference_cpu_certified": false,
+  "audit": {
+    "passed": true,
+    "official_score_reconciled": true,
+    "prediction_never_opened_gold": true,
+    "predictions_frozen_before_gold_scoring": true,
+    "prior_artifacts_preserved": 540,
+    "source_files_unchanged": 49,
+    "checkpoint_unchanged": true,
+    "a_checkpoint_base_byte_identical": true
+  },
+  "new_real_fits": 0,
+  "new_validation_calls": 0,
+  "new_test_prediction_calls": 1,
+  "new_official_test_scoring_calls": 1,
+  "a_rerun": false,
+  "first_blind_test": false,
+  "formal_submission_changed": false,
+  "no_followup_tuning": true
+}

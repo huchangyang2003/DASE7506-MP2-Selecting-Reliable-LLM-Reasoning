@@ -1,69 +1,11 @@
 {
-  "method_id": "mp2-final-oof-arithmetic-seed20261022",
-  "decided_at_utc": "2026-10-22T14:07:50.629041+00:00",
-  "decision": "Stage 4 arithmetic is the final selected optimization method.",
-  "status": "method_and_inference_assets_locked_pending_final_test_evaluation",
-  "source_checkpoint": "V2_Ranking_Objective/code/runs/stage4_final/arithmetic_seed20261022/checkpoint",
-  "method_entry": "code/submission.py",
-  "checkpoint": "checkpoint",
-  "primary_seed": 20261022,
-  "training_fit_split": "train",
-  "validation_role": "development and method selection only",
-  "train_validation_refit": false,
-  "new_training_in_this_consolidation": false,
-  "cross_seed_inference_ensemble": false,
-  "base_mlp": {
-    "features": 1054,
-    "hidden": 32,
-    "objective": "candidate BCE",
-    "weighting": "uniform",
-    "epochs": 60,
-    "learning_rate": 0.001,
-    "l2": 0.0001,
-    "question_batch": 128
-  },
-  "embedding_logistic": {
-    "features": 1024,
-    "l2": 0.01
-  },
-  "fusion": {
-    "fit_inputs": "question-grouped 5-fold TRAIN OOF scores + candidate input features",
-    "feature_dimension": 25,
-    "base_fusion_features": 8,
-    "arithmetic_features": 17,
-    "model": "candidate logistic regression",
-    "l2": 0.001
-  },
-  "arithmetic": "frozen stage4 parser; soft evidence only, no hard rejection",
-  "excluded": [
-    "alternative ranking losses",
-    "disagreement loss weighting",
-    "equal averaging",
-    "cross-seed ensemble",
-    "neural residual or set16 head",
-    "train+validation refit"
-  ],
-  "validation_primary": {
-    "all_correct": 745,
-    "all_n": 798,
-    "all_accuracy": 93.35839598997494,
-    "disagreement_correct": 302,
-    "disagreement_n": 355,
-    "disagreement_accuracy": 85.07042253521126
-  },
-  "validation_three_seed_mean": {
-    "all_accuracy": 93.1077694235589,
-    "disagreement_accuracy": 84.50704225352112
-  },
-  "test_evaluated_for_this_method": false,
-  "prior_v1_test_score_is_not_this_method_score": true,
-  "reason_reject_stage5": "Mean disagreement gain +0.5634pp < predeclared 1pp threshold; third seed degrades; interval crosses zero.",
-  "inference_uncompressed_asset_bytes": 203273,
-  "reference_cpu_eligibility_confirmed": false,
-  "checkpoint_sha256": {
-    "model.npz": "deb05856bff0c5938bb833ec5b66b5b4ceba0dc26149c659d299dba46d3f1432",
-    "config.json": "80778798203066f463aefab58c0db06c9739d9b0cc422e2a06ba2ae6f2e22fa4"
-  },
-  "training_evidence_root": "../V2_Ranking_Objective/code/runs",
-  "publication_or_submission_performed": false
+  "method": "A_pooling_a1",
+  "alpha": 1.0,
+  "temperature": 1,
+  "selection_basis": "Primary TRAIN OOF only; explicit user acceptance of the already-scored A for final delivery",
+  "original_selection": "evidence/pooling/selection_before_confirmation.json",
+  "original_gate_passed": false,
+  "final_test_authorization": "evidence/final_decisions/FINAL_TEST_AUTHORIZATION_20261030.json",
+  "publication_record_after_scoring": true,
+  "not_a_new_pre_test_record": true
 }

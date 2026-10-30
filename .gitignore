@@ -5,7 +5,6 @@ __pycache__/
 .pytest_cache/
 data/
 output/
-runs/
 evaluation/repeated-*
 evaluation/reproduction_repeat*/
 evaluation/training_rebuild*/

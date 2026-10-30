@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "mode": "read-only receipt and hash reconciliation; no predictor or scorer invocation",
+  "new_prediction_calls": 0,
+  "new_official_scoring_calls": 0,
+  "new_fits": 0,
+  "official_ce_score": [
+    384,
+    467
+  ],
+  "a_versus_ce_fixed_broken_net": [
+    13,
+    4,
+    9
+  ],
+  "ce_versus_formal_fixed_broken_net": [
+    23,
+    23,
+    0
+  ],
+  "protected_prior_artifacts": 540,
+  "unchanged_source_files": 49,
+  "one_prediction_one_score_verified": true,
+  "prediction_gold_isolation_verified": true,
+  "a_not_rerun_and_prediction_hash_preserved": true,
+  "ce_checkpoint_identical_to_a_base": true,
+  "original_plan_and_budget_unchanged": true
+}

@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-30",
+  "status": "planned_not_started",
+  "scope": "First finite round only; no new experiments executed",
+  "baseline": {
+    "method": "uniform_positive_ce",
+    "validation": {
+      "correct": 748,
+      "n": 798,
+      "disagreement_correct": 305,
+      "disagreement_n": 355
+    },
+    "cv_disagreement_correct": [
+      1743,
+      1749
+    ],
+    "cv_disagreement_n": 2114,
+    "fold_seeds": [
+      20261022,
+      20261029
+    ]
+  },
+  "stage_a": {
+    "alphas": [
+      0,
+      0.25,
+      0.5,
+      1
+    ],
+    "probability_map": "per-question softmax T=1",
+    "new_fits": 0,
+    "max_selected_nonzero_for_validation": 1
+  },
+  "stage_b": {
+    "configs": [
+      "candidate_pair_1030",
+      "group_mean_1030",
+      "group_mean_context_1032"
+    ],
+    "cv_fits": 30,
+    "full_train_fits": 3,
+    "new_fits": 33,
+    "lambda": 0.01,
+    "maxiter": 2000,
+    "gradient_inf_max": 0.000001
+  },
+  "stage_c": {
+    "augmentation": "all_nonempty_subsets_within_same_numeric_answer",
+    "config": "primary-CV-selected B2 or B3; no validation selection",
+    "new_fits": 11,
+    "scaler": "reuse matched unaugmented original-group/candidate statistics"
+  },
+  "limits": {
+    "normal_new_fits": 44,
+    "optional_fixed_ce_rebuild_fits": 11,
+    "max_real_fit_calls": 55,
+    "official_validation_scoring_calls": 5,
+    "official_test_calls_this_plan": 0,
+    "total_threads": 4,
+    "model_workers": 1,
+    "inference_assets_bytes": 16777216,
+    "reference_cpu_seconds": 30
+  },
+  "test_eligibility": {
+    "both_cv_strictly_above_ce": true,
+    "validation_disagreement_min": 309,
+    "validation_overall_min": 748,
+    "integrity_resource_and_reproduction_pass": true,
+    "automatic_test": false
+  },
+  "deferred": [
+    "raw-embedding set attention",
+    "heterogeneous CatBoost stacking",
+    "arithmetic repair propagation",
+    "distillation"
+  ]
+}

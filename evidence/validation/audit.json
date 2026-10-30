@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "candidates": [
+    {
+      "name": "A_pooling_a1",
+      "official_json_and_reconstructed_counts_match": true,
+      "validation_only_fresh_commands": true,
+      "predictor_no_reference_reads": true,
+      "native_threads_at_most4": true,
+      "checkpoint_hashes_and_assets_unchanged": true
+    },
+    {
+      "name": "B1_candidate_pair",
+      "official_json_and_reconstructed_counts_match": true,
+      "validation_only_fresh_commands": true,
+      "predictor_no_reference_reads": true,
+      "native_threads_at_most4": true,
+      "checkpoint_hashes_and_assets_unchanged": true
+    },
+    {
+      "name": "B3_group_mean_context",
+      "official_json_and_reconstructed_counts_match": true,
+      "validation_only_fresh_commands": true,
+      "predictor_no_reference_reads": true,
+      "native_threads_at_most4": true,
+      "checkpoint_hashes_and_assets_unchanged": true
+    },
+    {
+      "name": "C_subset",
+      "official_json_and_reconstructed_counts_match": true,
+      "validation_only_fresh_commands": true,
+      "predictor_no_reference_reads": true,
+      "native_threads_at_most4": true,
+      "checkpoint_hashes_and_assets_unchanged": true
+    }
+  ],
+  "eligibility_independently_reconciled": {
+    "A_pooling_a1": false,
+    "B1_candidate_pair": false,
+    "B3_group_mean_context": false,
+    "C_subset": false
+  },
+  "no_qualified_candidate": true,
+  "source_freeze_and_prior_artifacts_unchanged": true,
+  "new_fits": 0,
+  "new_official_runner_or_scorer_calls": 0,
+  "test_calls": 0,
+  "scope": "Post-hoc read-only reconciliation; did not run a prediction or official scorer again."
+}

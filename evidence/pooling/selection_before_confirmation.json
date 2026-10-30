@@ -1,0 +1,11 @@
+{
+  "selected_alpha": 1.0,
+  "selection_split": "primary TRAIN OOF only",
+  "rule": "disagreement correct; overall correct; smaller alpha",
+  "primary_correct": 4386,
+  "primary_disagreement_correct": 1745,
+  "confirmation_not_yet_opened": true,
+  "validation_not_opened": true,
+  "test_not_opened": true,
+  "selected_at_utc": "2026-10-30T09:34:43.010424+00:00"
+}

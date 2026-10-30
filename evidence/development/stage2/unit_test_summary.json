@@ -1,7 +1,0 @@
-{
-  "command": "python -B -m unittest discover -s tests -v",
-  "observed_tests_passed": 12,
-  "new_weighting_tests": 5,
-  "result": "OK",
-  "evidence": "Successful tool-observed unittest output before stage-2 training; original seven objective tests plus five new weighting tests"
-}

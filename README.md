@@ -1,14 +1,14 @@
-# DASE7506 MP2 — Selecting Reliable LLM Reasoning
+# DASE7506 MP2 Selecting Reliable LLM Reasoning
 
-**Frozen model release: `frozen-v1.1`. Official test accuracy: `82.22698072805139` (384/467).**
+**Final release: `frozen-v2`. Official test: 393/467, accuracy 84.1541755888651%.**
 
-The submitted method combines an MLP32, an embedding-only logistic scorer and a TRAIN out-of-fold logistic fusion model with soft arithmetic evidence. The primary seed is 20261022. The method and checkpoint are the completed fourth-round solution; none of the proposed supplementary experiments is included.
+The final method is uniform-positive cross-entropy (CE) linear scoring followed by complete mean pooling over candidates with the same parsed numeric answer. Pooling strength is fixed at 1 and temperature at 1. The CE model uses 1,024 supplied representation dimensions plus 30 surface/group and 17 centered arithmetic features. No extra pretrained weights, external training data or new candidate generation is used.
 
-Read [REPORT.pdf](REPORT.pdf) (**10 pages**) or the editable [REPORT.md](REPORT.md) for the research question, five controlled studies, failures, uncertainty and resource accounting.
+Read [REPORT.pdf](REPORT.pdf) (10 pages) and [REPORT.md](REPORT.md) for our completed experiments. A matched unpooled CE control scores 384/467. A repairs 13 CE errors and damages four CE successes, net +9. This is a fixed-bank result following earlier test exposure, not an untouched blind test.
 
-## 1. Install
+## Install
 
-Python **3.12**. Run from this repository's root. PowerShell:
+Python 3.12 and NumPy 2.5.3. From this repository root in PowerShell:
 
 ```powershell
 py -3.12 -m venv .venv
@@ -20,24 +20,22 @@ $env:MKL_NUM_THREADS = '4'
 $env:PYTHONIOENCODING = 'utf-8'
 ```
 
-Only NumPy 2.5.3 is needed for training, prediction and scoring. Report generation uses separate optional dependencies. On Linux/macOS use `python3.12 -m venv .venv` and the environment's `python`; the Python script arguments are identical.
+On Linux/macOS create the environment with `python3.12 -m venv .venv` and use its Python executable. Prediction and training require only NumPy. Optional report building has separate dependencies in `report/reporting-requirements.txt` and uses Arial fonts on Windows.
 
-## 2. Obtain the unchanged course data
+## Obtain the unchanged course data
 
-Data is deliberately omitted from this Git repository. The setup helper downloads **only the supplied course files** from official commit `bb801f4f2e7629d270df765ab12c333b2dc616bb` and verifies their SHA-256 digests:
+Data is excluded from Git. The helper downloads only course files pinned in [DATA_SOURCES.json](DATA_SOURCES.json), or copies an existing official directory:
 
 ```powershell
 & $py tools/fetch_data.py
+# Alternative, using a local copy:
+& $py tools/fetch_data.py --source-dir 'ABSOLUTE_PATH_TO_OFFICIAL_CODE_DATA'
 & $py tools/verify_release.py
 ```
 
-Alternatively, copy an already-downloaded official `code/data/` directory with `tools/fetch_data.py --source-dir 'ABSOLUTE_PATH_TO_OFFICIAL_CODE_DATA'`. The resulting layout is `data/manifest.json`, `data/gsm8k_train.jsonl`, etc., plus `data/candidates/` for texts and representations. All 12 file hashes are pinned in [DATA_SOURCES.json](DATA_SOURCES.json).
+The course source is [xudongwu-0/DASE7506-MP2](https://github.com/xudongwu-0/DASE7506-MP2), pinned at `bb801f4f2e7629d270df765ab12c333b2dc616bb`. All 12 file hashes are verified. Internet is needed only for downloading; prediction, scoring and training reproduction run offline.
 
-The official package is [xudongwu-0/DASE7506-MP2](https://github.com/xudongwu-0/DASE7506-MP2). Data setup requires internet only when downloading; prediction and scoring run offline. No model weights or external training data are downloaded.
-
-## 3. Reproduce the score without retraining
-
-Use new output names to preserve the original evidence:
+## Reproduce the final score without retraining
 
 ```powershell
 & $py -B code/predict.py --method code/submission.py --checkpoint checkpoint --data-dir data --split test --output evaluation/repeated-test-predictions.json
@@ -47,80 +45,93 @@ Use new output names to preserve the original evidence:
 Expected official fields:
 
 ```json
-{"protocol":"dase7506-mp2-open-hard-verifier-v5","split":"test","correct":384,"n":467,"accuracy":82.22698072805139}
+{"protocol":"dase7506-mp2-open-hard-verifier-v5","split":"test","correct":393,"n":467,"accuracy":84.1541755888651}
 ```
 
-The recorded original outputs are [test-score.json](evaluation/final_test/test-score.json) and [test-predictions.json](evaluation/final_test/test-predictions.json). They are evidence only; the predictor does not load cached predictions or reference answers.
-
-For an isolated offline checkpoint reproduction:
+For an isolated test-only offline reproduction, with prediction denied gold-reference access:
 
 ```powershell
 & $py -B tools/reproduce_final.py --output-dir evaluation/reproduction_repeat
 ```
 
-This creates a test-only tree, blocks network/external project reads and denies reference-answer access to the predictor. Only its independent scorer reads gold references. Use another new output directory on later runs.
+The package has no dependency on sibling research directories or local absolute paths. [Publication verification](evaluation/publication_verification/CHECKPOINT_REPRODUCTION.json) records the completed packaging reproduction, including exact agreement with all 467 previously saved IDs and candidate choices. This is a reproduction call, not a new optimization/test selection experiment. Use fresh output names when repeating it.
 
-## 4. Reproduce the fixed training pipeline (optional)
+The unpooled control can be reproduced with the same CE weights:
 
 ```powershell
-& $py -B tools/reproduce_training.py --destination evaluation/training_rebuild
+& $py -B code/predict.py --method code/ce_core.py --checkpoint checkpoint/baseline --data-dir data --split test --output evaluation/repeated-ce-predictions.json
+& $py -B code/score_predictions.py --data-dir data --split test --predictions evaluation/repeated-ce-predictions.json --output evaluation/repeated-ce-score.json
 ```
 
-This copies only training data into a new working tree, rebuilds the three fixed BCE bases, five-fold OOF models/fusion, frozen arithmetic features and round-4 fusion (**42 fits**). It never reads validation or test, performs no parameter selection and compares rebuilt arrays with the frozen checkpoint. Exact floating-point equality depends on NumPy/BLAS/hardware.
+Expected control result: 384/467, 82.22698072805139%. It is not another deployed checkpoint.
 
-This optional complete retraining was not rerun after the final test result. The completed evidence establishes checkpoint reproduction; the first publication check adds no new training. Original training/search scripts and plans are retained under [training/](training/); historical logs preserve their original path names.
+## Reproduce the fixed training recipe
 
-## 5. Result and resource record
+Rebuild the final CE on TRAIN only, retaining the already-selected pooling configuration (one fit):
 
-| Item | Recorded result |
+```powershell
+& $py -B training/rebuild.py --destination evaluation/training_rebuild
+```
+
+Also reconstruct both five-fold CE OOF partitions and all four predeclared pooling comparisons (11 fits total):
+
+```powershell
+& $py -B training/rebuild.py --destination evaluation/training_rebuild_cv --with-cv
+```
+
+The two fold seeds are 20261022 and 20261029. Whole questions and normalized duplicates stay together; standardization is fitted within each training fold. Uniform-positive CE uses L2=0.01 on all 1,071 features, fixed-zero intercept, float64 L-BFGS, maximum 2,000 iterations and gradient infinity norm at most 1e-6. Alpha is selected on primary OOF by disagreement correct, complete correct, then smaller alpha; confirmation does not reselect it. The optional reproduction verifies alpha=1 without validation or test access.
+
+Rebuilt arrays are compared to the original frozen CE checkpoint with absolute tolerance 1e-10; numerical equality can depend on the platform and BLAS. The publication check runs one fixed full-training refit, separately accounted as reproduction; it does not replace the submitted weights. The 11-fit CV rebuild is provided but not rerun during publication. Original CE search and experimental source archives are retained as evidence, not as the primary portable execution entry.
+
+## Results and resources
+
+| Method | Validation overall | Validation disagreement | Official test |
+|---|---:|---:|---:|
+| Earlier OOF + arithmetic | 745/798 | 302/355 | 384/467 |
+| Unpooled CE | 748/798 | 305/355 | 384/467 |
+| Final A | 751/798 | 308/355 | 393/467 |
+
+A selected alpha=1 on primary TRAIN OOF (1745/2114 versus CE 1743); confirmation gives 1750 versus 1749. Group pairwise models and subset augmentation did not surpass CE across both partitions. All completed fixed-candidate validation results and negative results remain summarized under `evidence/`.
+
+| Original A measurement | Value |
+|---|---:|
+| Fresh prediction plus independent scoring | 1.06697 seconds |
+| Uncompressed inference assets | 50,803 bytes |
+| Local CPU | Intel Core i7-14700K |
+| BLAS threads | 4 |
+| Reference Xeon eligibility | Not certified by local measurements |
+
+The original answer-group round contains 44 fits, five validation scores and two separately authorized final test scores (A and CE once each). Publication reproduction adds one fixed training fit and one repeated A prediction/scoring pair, recorded separately in `evaluation/publication_verification/`. No parameter, alpha or method changes follow those results.
+
+The original practical validation gate was 309/355. A scored 308; the failed gate is retained, with an explicit exception before the single A test. CE was requested afterward as a supplementary matched control. The final A had already been chosen before that control was run. Test references are used for scoring/reproduction, not training, rule construction or lookup tables.
+
+## Code and checkpoint identity
+
+Use the same immutable `frozen-v2` tag for both [code](https://github.com/huchangyang2003/DASE7506-MP2-Selecting-Reliable-LLM-Reasoning/tree/frozen-v2) and [checkpoint](https://github.com/huchangyang2003/DASE7506-MP2-Selecting-Reliable-LLM-Reasoning/tree/frozen-v2/checkpoint). Original `frozen-v1` and `frozen-v1.1` tags retain earlier versions; their history is not rewritten.
+
+The three deployed files are `checkpoint/config.json`, `checkpoint/baseline/config.json`, and `checkpoint/baseline/model.npz`. CE arrays and all three configuration/asset files are copied byte for byte from the tested A checkpoint. Only imports are relocated into the standalone `code/` directory; inference function ASTs and all 467 outputs are verified identical.
+
+[FREEZE.json](FREEZE.json) is explicitly a **post-scoring packaging manifest** of the relocated files. It does not claim to be a new pre-test freeze. The actual original pre-test records are preserved in `evaluation/final_test/PRE_TEST_FREEZE.json` and `evaluation/ce_control/PRE_TEST_FREEZE.json`. [SOURCE_PROVENANCE.json](SOURCE_PROVENANCE.json) explains copied sources and import-only changes; [PUBLICATION_MANIFEST.json](PUBLICATION_MANIFEST.json) records current file hashes.
+
+## Repository contents
+
+| Path | Contents |
 |---|---|
-| Official test | **384/467 = 82.22698072805139%** |
-| Historical V1 test | 368/467 = 78.80085653104925% |
-| Paired change | 33 repaired, 17 broken, net +16 |
-| Final primary-seed validation | 745/798 overall; 302/355 disagreement |
-| Full local prediction + independent scoring | 0.8533101 s; fresh processes, startup/loading/preprocessing included |
-| Local CPU / parallelism | Intel Core i7-14700K; four BLAS threads; no model worker processes |
-| Uncompressed inference assets | 203,273 bytes (198.51 KiB); limit 16 MiB |
-| Isolated checkpoint reproduction | All 467 IDs/choices and the score exactly match |
+| `code/`, `checkpoint/` | Standalone final inference and all required assets |
+| `training/rebuild.py` | TRAIN-only final refit and optional fixed CV reproduction |
+| `REPORT.pdf`, `REPORT.md`, `report/` | Approved 10-page report, manuscript and standalone builder |
+| `evaluation/final_test/`, `evaluation/ce_control/` | Original A and CE predictions, official scores, resources/access and audits |
+| `evaluation/publication_verification/` | Independent packaging and training-reproduction receipts |
+| `evidence/` | Compact reported results, seeds, plans and archived experimental implementations |
+| `tools/` | Data acquisition, release verification and offline reproduction |
+| `AI_ASSISTANCE.md`, `ATTRIBUTION.md`, `attribution/` | Unchanged approved disclosure, updated provenance and licenses |
 
-Full measurements: [RESOURCE_REPORT.json](evaluation/final_test/RESOURCE_REPORT.json), [paired comparison](evaluation/final_test/PAIRED_COMPARISON.json), [offline verification](evaluation/reproduction/VERIFICATION.json).
+No old deployment checkpoints, fold weights, caches, virtual environments, course data or large delivery ZIPs are tracked. Historical source/log paths inside evidence refer to their original locations and are not runtime dependencies. The report records the original A method/checkpoint paths; their portable publication equivalents are `code/submission.py` and `checkpoint/`.
 
-Reference Xeon Platinum 8457C eligibility remains subject to course verification. V1 test accuracy was known before later development; this is not presented as an untouched blind-test study. Method selection used training/validation and the optimized method was frozen before its test evaluation.
-
-## 6. Code/checkpoint identity
-
-Use the same `frozen-v1.1` tag for the code and checkpoint:
-
-- Code: [frozen-v1.1 source](https://github.com/huchangyang2003/DASE7506-MP2-Selecting-Reliable-LLM-Reasoning/tree/frozen-v1.1)
-- Checkpoint: [matching inference assets](https://github.com/huchangyang2003/DASE7506-MP2-Selecting-Reliable-LLM-Reasoning/tree/frozen-v1.1/checkpoint)
-
-| Asset | SHA-256 |
-|---|---|
-| `checkpoint/model.npz` | `deb05856bff0c5938bb833ec5b66b5b4ceba0dc26149c659d299dba46d3f1432` |
-| `checkpoint/config.json` | `80778798203066f463aefab58c0db06c9739d9b0cc422e2a06ba2ae6f2e22fa4` |
-
-[FREEZE.json](FREEZE.json) is the immutable pre-test source/asset record. [FINAL_SELECTION.json](FINAL_SELECTION.json) is also historical; its pending status describes that earlier moment. [FINAL_RESULT.json](FINAL_RESULT.json) is the completed result. [PUBLICATION_MANIFEST.json](PUBLICATION_MANIFEST.json) covers the files in this publication layout.
-
-## 7. Repository map
-
-| Path | Purpose |
-|---|---|
-| `REPORT.pdf`, `REPORT.md` | Current 10-page report and editable manuscript |
-| `code/`, `checkpoint/` | Exact frozen inference sources and all deployment assets |
-| `training/code/`, `training/*PLAN.md` | Training/search implementations and predeclared plans |
-| `evidence/development/` | Historical five-round summaries, diagnostics, predictions and logs; no old deployment weights |
-| `evaluation/` | Original official score, paired/resource records and offline verification |
-| `tools/` | Data setup, integrity and reproduction helpers |
-| `report/` | Report source, optional dependencies and visual QA |
-| `AI_ASSISTANCE.md`, `ATTRIBUTION.md`, `attribution/` | Current disclosure, historical-state explanation and retained licenses |
-
-Virtual environments, downloaded data, regenerable arrays/caches, old report editions and large delivery ZIPs are excluded.
-
-To rebuild the report on Windows with Arial fonts, install `report/reporting-requirements.txt` separately and run:
+Rebuild the report, without any training or scoring:
 
 ```powershell
 & $py report/build_report.py --output output/REPORT.rebuilt.pdf --markdown output/REPORT.rebuilt.md
 ```
 
-This GitHub release is the artifact publication; completing the course score form and its GitHub issue is a separate step.
-
+GitHub artifact publication is separate from submitting/updating the course result form and its GitHub issue.

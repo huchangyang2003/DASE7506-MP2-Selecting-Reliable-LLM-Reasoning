@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "purpose": "Fixed training reproduction only; not method selection",
+  "fit_calls": 1,
+  "with_cv": false,
+  "validation_calls": 0,
+  "test_calls": 0,
+  "all_training_bank_files": [
+    "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\Second_Publication_20261030\\DASE7506-MP2-Selecting-Reliable-LLM-Reasoning\\data\\candidates\\gsm8k_train.jsonl",
+    "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\Second_Publication_20261030\\DASE7506-MP2-Selecting-Reliable-LLM-Reasoning\\data\\candidates\\gsm8k_train.npz",
+    "D:\\ProgramData\\ChatGPT\\HKU\\Semester1\\DASE7506A_Advanced machine learning methods\\Project2_Selecting Reliable LLM Reasoning\\Second_Publication_20261030\\DASE7506-MP2-Selecting-Reliable-LLM-Reasoning\\data\\gsm8k_train.jsonl"
+  ],
+  "denied": [],
+  "maximum_absolute_difference_from_original_arrays": {
+    "mean": 0.0,
+    "scale": 0.0,
+    "weights": 0.0,
+    "bias": 0.0
+  },
+  "tolerance": 1e-10,
+  "original_checkpoint_unchanged": true,
+  "wall_seconds": 7.814426699998876,
+  "train_sha256": {
+    "candidates\\gsm8k_train.npz": "3bb3d5dcbc71dc64e671c03f965594f91e195acd2be01012476d8b966a6ba1d2",
+    "gsm8k_train.jsonl": "acc662ed0328b5d38b2dee6f72ddcc956073df4ffb2ef4c4ba668cf445a92003",
+    "candidates\\gsm8k_train.jsonl": "38fa2e71c030ae301e6a87366e0700453a56d14abe73f2d14504b9cd0749ed43"
+  },
+  "original_config_provenance_retained": true
+}
