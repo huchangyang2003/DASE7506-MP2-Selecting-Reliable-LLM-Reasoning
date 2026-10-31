@@ -1,0 +1,58 @@
+{
+  "record_kind": "Post-scoring compact export of original access receipts",
+  "roles": {
+    "test_predict": {
+      "success": true,
+      "denied": [],
+      "native_blas": [
+        {
+          "library": "libscipy_openblas64_-ed4f167a5330424524f45258e7ca2c8d.dll",
+          "symbol": "scipy_openblas_get_num_threads64_",
+          "threads": 1
+        }
+      ],
+      "observed_child_os_thread_samples": [
+        4,
+        4,
+        4
+      ],
+      "cpu_affinity_logical_processors": 1,
+      "resource_observer_threads": 0,
+      "no_torch_imported": true,
+      "cuda_hidden": true,
+      "numpy_version": "2.5.3",
+      "data_opened": [
+        "candidates/gsm8k_test.jsonl",
+        "candidates/gsm8k_test.npz"
+      ],
+      "original_receipt_sha256": "d9b87f910c3f0685fd104c7ce3ba65d30e33437d671d6a4c9ffa776af4c0bd67"
+    },
+    "test_score": {
+      "success": true,
+      "denied": [],
+      "native_blas": [
+        {
+          "library": "libscipy_openblas64_-ed4f167a5330424524f45258e7ca2c8d.dll",
+          "symbol": "scipy_openblas_get_num_threads64_",
+          "threads": 1
+        }
+      ],
+      "observed_child_os_thread_samples": [
+        4,
+        4,
+        4
+      ],
+      "cpu_affinity_logical_processors": 1,
+      "resource_observer_threads": 0,
+      "no_torch_imported": true,
+      "cuda_hidden": true,
+      "numpy_version": "2.5.3",
+      "data_opened": [
+        "candidates/gsm8k_test.jsonl",
+        "candidates/gsm8k_test.npz",
+        "gsm8k_test.jsonl"
+      ],
+      "original_receipt_sha256": "dc4f85d3b96b066137ea34f655e187e2ee4e3390960f6a703bbac8c86f5f01b9"
+    }
+  }
+}

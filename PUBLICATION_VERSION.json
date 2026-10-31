@@ -1,8 +1,10 @@
 {
-  "tag": "frozen-v2",
-  "previous_tag": "frozen-v1.1",
-  "previous_commit": "cf84d5c2045a80db9174bd3657030ab50f8b9b00",
-  "scope": "New final CE + pooling method, compact evidence, matching report and portable reproduction",
-  "historical_tags_preserved": true,
-  "publication_preparation_started_at_utc": "2026-10-30T12:37:51.083500+00:00"
+  "version": "frozen-v3",
+  "method": "R1",
+  "previous_version": "frozen-v2",
+  "prepared_utc": "2026-10-31T15:36:52.827474+00:00",
+  "test_correct": 397,
+  "test_n": 467,
+  "code_url": "https://github.com/huchangyang2003/DASE7506-MP2-Selecting-Reliable-LLM-Reasoning/tree/frozen-v3",
+  "checkpoint_url": "https://github.com/huchangyang2003/DASE7506-MP2-Selecting-Reliable-LLM-Reasoning/tree/frozen-v3/checkpoint"
 }

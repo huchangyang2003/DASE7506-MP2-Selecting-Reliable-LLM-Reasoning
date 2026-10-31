@@ -1,17 +1,11 @@
 {
-  "method_id": "v6_ce_answer_pooling_alpha1_temperature1",
   "record_kind": "post_scoring_packaging_manifest",
-  "created_at_utc": "2026-10-30T12:40:21.436767+00:00",
   "not_a_pre_test_freeze": true,
-  "original_pre_test_freeze": "evaluation/final_test/PRE_TEST_FREEZE.json",
+  "method_id": "v7_r1_fixed_ce_evidence_residual_pooling",
   "files": {
     "code/arithmetic_features.py": {
       "sha256": "c8feff01581ba500caddc5baef6f0b0c9569f8d11b463d8d07a77fe24c81d26a",
       "bytes": 9009
-    },
-    "code/ce_core.py": {
-      "sha256": "c96581ad4e9106f8c99d3cf65981990cdf0e2b50d2ff0a51b90470927d10fd45",
-      "bytes": 888
     },
     "code/common.py": {
       "sha256": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
@@ -33,13 +27,33 @@
       "sha256": "e7a627fbdc9ef8d4ab3189a6fa5ac02d56ae703ccd1a81507aea0bd66e042162",
       "bytes": 1680
     },
+    "code/residual_core.py": {
+      "sha256": "17eb1efed68782833c96e29d4a55d5acd5d19a57be98d5f12a303a69a6eb9f90",
+      "bytes": 3766
+    },
     "code/score_predictions.py": {
       "sha256": "fe12b809b82117aea722e5dfef7a55a88950a7cf50c49ec2ea007ea847959960",
       "bytes": 1283
     },
     "code/submission.py": {
-      "sha256": "82d54087a02521da2e9fea9a65da1a335a35b7c4aed197b92e0d343c9d83b25c",
-      "bytes": 619
+      "sha256": "c839dbc6a40fcc36e20f81e80eda06da8632f2eca9a6bf602c32c9e8f1d50178",
+      "bytes": 83
+    },
+    "code/v7_common.py": {
+      "sha256": "f02d033d95a901c373fda22b20802bb1eefd884a61c2ebede66586e0f8aa2e15",
+      "bytes": 841
+    },
+    "code/v7_evidence.py": {
+      "sha256": "0f1c99fc77ae11697ee3323195697b770beb1cec24e1fa7b897110b5e8a777c7",
+      "bytes": 24474
+    },
+    "checkpoint/config.json": {
+      "sha256": "48ab34619c6b6a41d08eea894a88f7d92eba99ee76a750a7ca90075c0370095f",
+      "bytes": 328
+    },
+    "checkpoint/residual.npz": {
+      "sha256": "506365d98c45ca3a2a41abdda0752ded163d817cc117c25f9e43672ec1d09be3",
+      "bytes": 1950
     },
     "checkpoint/baseline/config.json": {
       "sha256": "c7c4f3989ad060df1dde8c1cf59fb53d7f5e8baabf31a7c214d9d5ef8ccc48cf",
@@ -48,13 +62,9 @@
     "checkpoint/baseline/model.npz": {
       "sha256": "a131cd6422d08c4496cf0c344daa80ad4484f3bb3af2bc773ba83e2051446ba6",
       "bytes": 26702
-    },
-    "checkpoint/config.json": {
-      "sha256": "316a6b23a25912f851d4af90c27f230ec9db8d778a4ad4b4a97db1fc4990e9fa",
-      "bytes": 362
     }
   },
-  "selection_sha256": "b1aa30b318ad1024afe778f9438032f5c846f11f4c83206e313832437971c7fd",
-  "inference_function_AST_identity_checked": true,
-  "no_model_parameter_changes": true
+  "selection_sha256": "9cfb5d07dba97b12512ef6fc51328a0644e5c49383cc539ae955977fc1a2a3cc",
+  "original_pre_test_freeze": "evaluation/final_test/PRE_TEST_FREEZE.json",
+  "original_pre_test_freeze_sha256": "fc2a93eff37821e4695d84bfcad03c7fc3e7823a7982f28a10392b68bf2eedbc"
 }

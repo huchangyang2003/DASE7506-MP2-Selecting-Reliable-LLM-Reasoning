@@ -1,6 +1,7 @@
-"""Rebuild fixed TRAIN-only CE; optionally reproduce both CV pooling comparisons."""
+"""Optional fixed TRAIN-only R1 reproduction: one CE fit and one residual fit, no search."""
 import os
-for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','NUMEXPR_NUM_THREADS','VECLIB_MAXIMUM_THREADS'):os.environ[k]='4'
+for key in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','NUMEXPR_NUM_THREADS','VECLIB_MAXIMUM_THREADS']:
+    os.environ[key]='1'
 os.environ['CUDA_VISIBLE_DEVICES']=''
 import argparse
 import hashlib
@@ -10,78 +11,72 @@ import shutil
 import sys
 import time
 import numpy as np
+
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'code'))
 from common import load_inputs,read_jsonl,parse_answer
-from linear_core import build_inputs,fit_scaler,fit
-from pooling_core import choose,ALPHAS
-from fusion_core import grouped_folds
+from linear_core import build_inputs,fit_scaler,fit,scores
+from residual_core import evidence,scaler,design,fit_residual
 
-def save(p,value):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(value,indent=2)+'\n',encoding='utf-8')
+def read(p):return json.loads(Path(p).read_text(encoding='utf8'))
+def save(p,v):
+    p.parent.mkdir(parents=True,exist_ok=True)
+    p.write_text(json.dumps(v,indent=2)+'\n',encoding='utf8')
+
 def main():
-    ap=argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--destination',type=Path,required=True)
-    ap.add_argument('--data-dir',type=Path,default=ROOT/'data')
-    ap.add_argument('--with-cv',action='store_true',help='10 more fixed CE fits; all four predeclared alphas, no new search')
-    args=ap.parse_args();data=args.data_dir.resolve();dest=args.destination.resolve()
-    if dest.exists():raise FileExistsError('Use a new destination; never overwrite evidence')
-    dest.mkdir(parents=True)
-    opened=set();denied=[];calls=0;tick=time.perf_counter()
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--destination',type=Path,required=True)
+    parser.add_argument('--data-dir',type=Path,default=ROOT/'data')
+    args=parser.parse_args();dest=args.destination.resolve();data=args.data_dir.resolve()
+    if dest.exists():raise FileExistsError('Use a fresh destination; never replace original evidence/checkpoint')
+    dest.mkdir(parents=True);start=time.perf_counter();opened=set();denied=[]
     allowed={(data/'gsm8k_train.jsonl').resolve(),(data/'candidates/gsm8k_train.jsonl').resolve(),(data/'candidates/gsm8k_train.npz').resolve()}
     def audit(event,values):
-        if event.startswith('socket.connect'):raise PermissionError('Training reproduction is offline')
+        if event.startswith('socket.connect'):raise PermissionError('Offline fixed training reproduction')
         if event=='open' and isinstance(values[0],(str,bytes)):
-            p=Path(os.fsdecode(values[0])).resolve()
-            if p.name.lower().startswith('gsm8k_'):
-                if p not in allowed:denied.append(str(p));raise PermissionError('Training may read TRAIN only')
-                opened.add(str(p))
+            path=Path(os.fsdecode(values[0])).resolve()
+            if path.name.lower().startswith('gsm8k_'):
+                if path not in allowed:denied.append(str(path));raise PermissionError('Only TRAIN is permitted')
+                opened.add(str(path))
     sys.addaudithook(audit)
     bank,arrays=load_inputs('train',data);refs=read_jsonl(data/'gsm8k_train.jsonl')
-    assert len(bank)==len(refs) and all(b['id']==r['id'] and b['question']==r['question'] for b,r in zip(bank,refs))
-    y=np.asarray([[int((a:=parse_answer(c['text'])) is not None and a==parse_answer(r['answer'])) for c in b['candidates']] for b,r in zip(bank,refs)],float)
-    hard=np.asarray([len({a for c in b['candidates'] if (a:=parse_answer(c['text'])) is not None})>=2 for b in bank])
-    x,names=build_inputs(bank,arrays)
-    assert x.shape==(4755,4,1071) and int(hard.sum())==2114
-    def fitting(xx,yy,label):
-        nonlocal calls
-        calls+=1;save(dest/'CALL_LEDGER.json',{'fit_calls':calls,'current':label,'with_cv':args.with_cv,'validation_calls':0,'test_calls':0})
-        theta,record=fit(xx,yy,'uniform_ce',0.01,0.01)
-        save(dest/'optimization'/f'{label}.json',record)
-        if not record['converged'] or record['gradient_inf']>1e-6:raise RuntimeError('Fixed fit did not converge')
-        return theta
-    cv=[]
-    if args.with_cv:
-        for seed in (20261022,20261029):
-            folds=grouped_folds(bank,seed=seed);oof=np.full(y.shape,np.nan)
-            for f in range(5):
-                train,held=np.flatnonzero(folds!=f),np.flatnonzero(folds==f)
-                mean,scale=fit_scaler(x[train]);theta=fitting(np.ascontiguousarray((x[train]-mean)/scale),y[train],f's{seed}_fold{f}')
-                oof[held]=((x[held]-mean)/scale)@theta[:-1]+theta[-1]
-            scores=[]
-            for alpha in ALPHAS:
-                selected=np.asarray(choose(bank,oof,alpha,arrays['embeddings'])[0]);ok=y[np.arange(len(bank)),selected].astype(bool)
-                scores.append({'alpha':alpha,'all_correct':int(ok.sum()),'disagreement_correct':int(ok[hard].sum())})
-            cv.append({'seed':seed,'scores':scores})
-            np.savez(dest/f'oof_{seed}.npz',logits=oof,fold=folds)
-        selected=max(cv[0]['scores'],key=lambda s:(s['disagreement_correct'],s['all_correct'],-s['alpha']))['alpha']
-        assert selected==1.0,'Different reconstructed OOF selection; inspect without retuning'
-        save(dest/'pooling_cv.json',{'cv':cv,'selected_alpha_from_primary_only':selected})
-    mean,scale=fit_scaler(x);theta=fitting(np.ascontiguousarray((x-mean)/scale),y,'full_train')
-    cp=dest/'checkpoint';(cp/'baseline').mkdir(parents=True)
-    np.savez(cp/'baseline/model.npz',mean=mean,scale=scale,weights=theta[:-1],bias=np.asarray(theta[-1]))
-    for rel in ('config.json','baseline/config.json'):shutil.copyfile(ROOT/'checkpoint'/rel,cp/rel)
-    assert names==json.loads((cp/'baseline/config.json').read_text())['feature_names']
-    with np.load(ROOT/'checkpoint/baseline/model.npz',allow_pickle=False) as original:
-        differences={k:float(np.max(np.abs(original[k]-v))) for k,v in {'mean':mean,'scale':scale,'weights':theta[:-1],'bias':np.asarray(theta[-1])}.items()}
-    passed=all(d<=1e-10 for d in differences.values())
-    record={'passed':passed,'purpose':'Fixed training reproduction only; not method selection','fit_calls':calls,'with_cv':args.with_cv,
-        'validation_calls':0,'test_calls':0,'all_training_bank_files':sorted(opened),'denied':denied,
-        'maximum_absolute_difference_from_original_arrays':differences,'tolerance':1e-10,
-        'original_checkpoint_unchanged':True,'wall_seconds':time.perf_counter()-tick,
-        'train_sha256':{str(p.relative_to(data)):hashlib.sha256(p.read_bytes()).hexdigest() for p in allowed},
-        'original_config_provenance_retained':True}
-    save(dest/'TRAINING_REPRODUCTION.json',record)
-    if not passed:raise RuntimeError('Rebuilt arrays differ; do not replace the submitted checkpoint')
-    print(json.dumps(record,indent=2))
+    assert len(bank)==len(refs)==4755
+    assert all(b['id']==r['id'] and b['question']==r['question'] for b,r in zip(bank,refs))
+    y=np.asarray([[int((a:=parse_answer(c['text'])) is not None and a==parse_answer(r['answer']))
+                   for c in b['candidates']] for b,r in zip(bank,refs)],float)
+    assert np.all(y.sum(1)>0)
+    x,names=build_inputs(bank,arrays);assert x.shape==(4755,4,1071)
+    assert names==read(ROOT/'checkpoint/baseline/config.json')['feature_names']
+    mean,scale=fit_scaler(x)
+    save(dest/'CALL_LEDGER.json',{'fit_calls':1,'current':'fixed full-TRAIN CE','validation_calls':0,'test_calls':0})
+    theta,ce_record=fit(np.ascontiguousarray((x-mean)/scale),y,'uniform_ce',.01,.01)
+    save(dest/'CE_OPTIMIZATION.json',ce_record)
+    assert ce_record['converged'] and ce_record['gradient_inf']<=1e-6
+    baseline={'mean':mean,'scale':scale,'weights':theta[:-1],'bias':np.asarray(theta[-1])}
+    extra=evidence(bank,x,'R1');assert extra.shape==(4755,4,50)
+    emean,escale=scaler(extra)
+    save(dest/'CALL_LEDGER.json',{'fit_calls':2,'current':'fixed full-TRAIN R1 residual','validation_calls':0,'test_calls':0})
+    weights,residual_record=fit_residual(design(extra,emean,escale),scores(x,baseline),y,.03)
+    save(dest/'RESIDUAL_OPTIMIZATION.json',residual_record)
+    assert residual_record['converged'] and residual_record['gradient_inf']<=1e-6
+    checkpoint=dest/'checkpoint';(checkpoint/'baseline').mkdir(parents=True)
+    np.savez(checkpoint/'baseline/model.npz',**baseline)
+    np.savez(checkpoint/'residual.npz',mean=emean,scale=escale,weights=weights)
+    for rel in ['config.json','baseline/config.json']:shutil.copyfile(ROOT/'checkpoint'/rel,checkpoint/rel)
+    differences={}
+    for rel in ['baseline/model.npz','residual.npz']:
+        with np.load(ROOT/'checkpoint'/rel,allow_pickle=False) as original,np.load(checkpoint/rel,allow_pickle=False) as rebuilt:
+            assert set(original.files)==set(rebuilt.files)
+            differences[rel]={k:float(np.max(np.abs(original[k]-rebuilt[k]))) for k in original.files}
+    passed=all(v<=1e-10 for block in differences.values() for v in block.values())
+    result={'passed':passed,'purpose':'Fixed selected-recipe reproduction, not model selection',
+      'fit_calls':2,'validation_calls':0,'test_calls':0,'whole_train_questions':len(bank),
+      'maximum_absolute_array_differences':differences,'tolerance':1e-10,
+      'original_checkpoint_unchanged':True,'opened':sorted(opened),'denied':denied,
+      'train_sha256':{str(p.relative_to(data)):hashlib.sha256(p.read_bytes()).hexdigest() for p in allowed},
+      'wall_seconds':time.perf_counter()-start}
+    save(dest/'TRAINING_REPRODUCTION.json',result)
+    if not passed:raise RuntimeError('Numerical mismatch; inspect platform/BLAS without replacing or retuning the shipped checkpoint')
+    print(json.dumps(result,indent=2))
 
 if __name__=='__main__':main()

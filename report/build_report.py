@@ -15,13 +15,13 @@ from pypdf import PdfReader
 ROOT=Path(__file__).resolve().parents[1]
 args=argparse.ArgumentParser()
 args.add_argument('--output',type=Path,default=ROOT/'output/pdf/DASE7506_MP2_Final_Report.pdf')
-args.add_argument('--markdown',type=Path,default=ROOT/'report/REPORT.md')
+args.add_argument('--markdown',type=Path,default=ROOT/'REPORT.md')
 opts=args.parse_args()
 OUT=opts.output;OUT.parent.mkdir(parents=True,exist_ok=True)
 load=lambda p:json.loads(p.read_text(encoding='utf-8'))
-A_RESULT=load(ROOT/'evaluation/final_test/test-score.json')
-CE_RESULT=load(ROOT/'evaluation/ce_control/test-score.json')
-assert A_RESULT['correct']==393 and CE_RESULT['correct']==384
+RECORDED=load(ROOT/'evidence/results.json')
+assert RECORDED['test']['correct']==397 and RECORDED['test']['n']==467
+assert RECORDED['residual_validation']['records']['R1']['official']['correct']==755
 PRESERVED_AI="h('AI assistance and reuse')\np('AI assistance was used for code, experiment orchestration, arithmetic parsing, interpretation, case review and this report. I reviewed the relevant code, independently conducted the experiments, verified the reported results, and remain fully responsible for the final implementation and all associated claims. Official parser, data and evaluator are unchanged. Candidate representations were supplied by the course; their Qwen3-0.6B provenance is in the original manifest. No Qwen weights, external training data or new candidate generations were used. GSM8K attribution and MIT license are retained.')\n"
 PRESERVED_REFERENCES='h(\'References\')\np(\'[1] <a href="https://github.com/xudongwu-0/DASE7506-MP2/blob/main/guide/GUIDE.md">Course guide and evaluation rules.</a><br/>[2] <a href="https://github.com/xudongwu-0/DASE7506-MP2/blob/main/code/README.md">Course installation and evaluation instructions.</a><br/>[3] Zaheer et al. <a href="https://arxiv.org/abs/1703.06114">Deep Sets.</a> NeurIPS 2017.<br/>[4] <a href="https://github.com/openai/grade-school-math">GSM8K source and retained MIT license.</a>\',True)'
 for name,file in [('Arial','arial.ttf'),('ArialBold','arialbd.ttf'),('ArialItalic','ariali.ttf')]:
@@ -79,4 +79,4 @@ reader=PdfReader(OUT)
 if len(reader.pages)!=PAGES:raise RuntimeError(f'Expected {PAGES} pages; got {len(reader.pages)}. Repair layout before delivery.')
 opts.markdown.parent.mkdir(parents=True,exist_ok=True)
 opts.markdown.write_text('\n'.join(markdown)+'\n',encoding='utf-8')
-print(json.dumps({'pdf':str(OUT),'pages':len(reader.pages),'test_correct':393,'test_accuracy':84.1541755888651}))
+print(json.dumps({'pdf':str(OUT),'pages':len(reader.pages),'test_correct':RECORDED['test']['correct'],'test_accuracy':RECORDED['test']['accuracy']}))

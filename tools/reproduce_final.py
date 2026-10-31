@@ -52,8 +52,8 @@ sys.addaudithook(audit)
 sys.argv=sys.argv[1:]
 runpy.run_path(sys.argv[0],run_name='__main__')
 ''',encoding='utf-8')
-    env={**os.environ,'PYTHONPATH':'','PYTHONDONTWRITEBYTECODE':'1','OMP_NUM_THREADS':'4',
-         'OPENBLAS_NUM_THREADS':'4','MKL_NUM_THREADS':'4','PYTHONIOENCODING':'utf-8'}
+    env={**os.environ,'PYTHONPATH':'','PYTHONDONTWRITEBYTECODE':'1','OMP_NUM_THREADS':'1',
+         'OPENBLAS_NUM_THREADS':'1','MKL_NUM_THREADS':'1','PYTHONIOENCODING':'utf-8'}
     commands=[['predict.py','--method','submission.py','--checkpoint','../checkpoint','--split','test','--output','../test-predictions.json'],
               ['score_predictions.py','--split','test','--predictions','../test-predictions.json','--output','../test-score.json']]
     elapsed=[]

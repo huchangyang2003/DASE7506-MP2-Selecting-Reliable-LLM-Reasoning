@@ -1,11 +1,14 @@
 {
-  "method": "A_pooling_a1",
-  "alpha": 1.0,
+  "method_id": "v7_r1_fixed_ce_evidence_residual_pooling",
+  "candidate": "R1",
+  "residual_l2": 0.03,
+  "residual_dimensions": 50,
+  "baseline_l2": 0.01,
+  "pooling_alpha": 1,
   "temperature": 1,
-  "selection_basis": "Primary TRAIN OOF only; explicit user acceptance of the already-scored A for final delivery",
-  "original_selection": "evidence/pooling/selection_before_confirmation.json",
-  "original_gate_passed": false,
-  "final_test_authorization": "evidence/final_decisions/FINAL_TEST_AUTHORIZATION_20261030.json",
-  "publication_record_after_scoring": true,
-  "not_a_new_pre_test_record": true
+  "neural_weight": 0,
+  "checkpoint": "checkpoint",
+  "entry": "code/submission.py",
+  "selection_evidence": "evidence/SELECTION.json",
+  "test_not_used_for_selection": true
 }

@@ -1,9 +1,10 @@
 {
-  "method": "v6_ce_answer_pooling",
+  "method": "v7_fixed_ce_residual",
+  "family": "R1",
+  "l2": 0.03,
+  "extra_dimensions": 50,
   "alpha": 1.0,
   "temperature": 1,
-  "source_checkpoint": "V3_Block_Regularization\\runs\\step1\\uniform_ce_e0.01_h0.01\\checkpoint",
-  "source_oof": "primary",
-  "selection_sha256": "6a91b499a5c24b978e791deef56a2066c12d89204859eb54d16d9439ed0ee0ad",
-  "feature_source": "unchanged V3_Block_Regularization/code"
+  "feature_freeze_sha256": "58ac78ef310b4f9d8c048ec9b8f0ebdba73a57f34c759af80b59c4c3473b951b",
+  "selection_sha256": "944b493e3e7652d8436bc27ad9372d4f7c63a1e100152ff1fc2ade1396706889"
 }

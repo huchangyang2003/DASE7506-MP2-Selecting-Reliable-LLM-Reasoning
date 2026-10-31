@@ -1,10 +1,12 @@
 .venv/
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
 .pytest_cache/
 data/
 output/
+tmp/
+runs/
+*.zip
 evaluation/repeated-*
-evaluation/reproduction_repeat*/
+evaluation/reproduction*/
 evaluation/training_rebuild*/

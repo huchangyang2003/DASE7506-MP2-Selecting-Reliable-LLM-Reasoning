@@ -1,0 +1,28 @@
+{
+  "record_kind": "Post-scoring compact selection provenance",
+  "primary_preferred_family": "R1",
+  "original_selection_sha256": "944b493e3e7652d8436bc27ad9372d4f7c63a1e100152ff1fc2ade1396706889",
+  "residual_l2": {
+    "R0": 0.1,
+    "R1": 0.03,
+    "R2": 0.1
+  },
+  "fusion_selected_weight": 0,
+  "fusion_choice_before_confirmation_sha256": "2d87bac8996d98ecf658413421c22fa551a63cd09e0fb92d929e709208e86442",
+  "eligible_final_rank": [
+    "R1",
+    "R2"
+  ],
+  "unique_candidate": "R1",
+  "rank_rule": [
+    "primary TRAIN disagreement correct",
+    "primary TRAIN complete correct",
+    "smaller assets",
+    "lower complete prediction cost"
+  ],
+  "confirmation_used_for": "eligibility only",
+  "post_test_tuning": false,
+  "research_fit_calls": 80,
+  "new_research_validation_scores": 5,
+  "new_research_test_scores": 1
+}

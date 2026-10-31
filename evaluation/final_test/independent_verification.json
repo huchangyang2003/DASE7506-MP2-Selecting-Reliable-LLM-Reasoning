@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "hashes_verified": 325,
+  "test_prediction_calls": 1,
+  "test_score_calls": 1,
+  "validation_choices_exact": true,
+  "validation_scores_added": 0,
+  "fits_added": 0,
+  "checkpoint_original_R1_exact": true,
+  "prediction_references_opened": 0,
+  "child_os_thread_snapshots": {
+    "contract": [
+      4,
+      4,
+      4
+    ],
+    "validation_predict": [
+      4,
+      4,
+      4
+    ],
+    "test_predict": [
+      4,
+      4,
+      4
+    ],
+    "test_score": [
+      4,
+      4,
+      4
+    ]
+  },
+  "native_compute_threads": 1,
+  "logical_cpu_affinity": 1,
+  "test_complete_process_wall_seconds": 2.283127799993963,
+  "uncompressed_checkpoint_bytes": 52353,
+  "test_correct": 397,
+  "test_n": 467,
+  "local_resource_screen_only": true,
+  "official_published_A_unchanged": true
+}
